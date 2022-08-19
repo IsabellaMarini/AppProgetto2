@@ -8,11 +8,18 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/immagine2"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/Accedi"
@@ -27,7 +34,9 @@
             android:layout_marginEnd="138dp"
             android:layout_marginBottom="461dp"
             android:backgroundTint="@color/verde"
-            android:text="Accedi" />
+            android:text="Accedi"
+            android:textColor="@color/white"
+            tools:ignore="TextContrastCheck" />
 
         <Button
             android:id="@+id/Registrati"
