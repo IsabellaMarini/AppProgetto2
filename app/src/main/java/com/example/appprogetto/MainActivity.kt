@@ -17,6 +17,12 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, paginaAccesso::class.java)
                 startActivity(intent)
             }
+
+        var registrati = findViewById<Button>(R.id.Registrati)
+        registrati.setOnClickListener(){
+            val intent = Intent(this, paginaRegistrati::class.java)
+            startActivity(intent)
+         }
         }
     }
 
