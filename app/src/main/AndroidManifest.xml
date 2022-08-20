@@ -21,6 +21,10 @@
         <activity
             android:name=".paginaAccesso">
         </activity>
+        <activity
+            android:name=".paginaRegistrati">
+        </activity>
+
     </application>
 
 </manifest>

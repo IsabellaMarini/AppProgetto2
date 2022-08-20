@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/basket">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="25dp">
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="137dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="237dp"
+            android:layout_marginBottom="591dp"
+            android:hint="@string/username"
+            android:text="Username" />
+
+        <EditText
+            android:id="@+id/email2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="225dp"
+            android:layout_marginBottom="482dp"
+            android:ems="10"
+            android:hint="@string/email2"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/password2"
+            android:layout_width="162dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="319dp"
+            android:layout_marginEnd="220dp"
+            android:layout_marginBottom="377dp"
+            android:ems="10"
+            android:hint="@string/password2"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/Data"
+            android:layout_width="167dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="411dp"
+            android:layout_marginEnd="213dp"
+            android:layout_marginBottom="275dp"
+            android:ems="10"
+            android:hint="@string/Data"
+            android:inputType="date" />
+
+        <Button
+            android:id="@+id/Registrati2"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="548dp"
+            android:layout_marginEnd="218dp"
+            android:layout_marginBottom="122dp"
+            android:backgroundTint="@color/verde"
+            android:text="Registrati" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
