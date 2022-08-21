@@ -6,6 +6,7 @@
     <string name="password">Inserisci la tua password</string>
     <string name="email2">Inserisci la tua e-mail</string>
     <string name="username">Scegli il tuo username</string>
-    <string name="Data">Inserisci la tua data di nascita</string>
+    <string name="Data">Seleziona la tua data di nascita:</string>
     <string name="conferma">Conferma la tua password</string>
+    <string name="Sport">Seleziona uno o più sport che ti interessano:</string>
 </resources>

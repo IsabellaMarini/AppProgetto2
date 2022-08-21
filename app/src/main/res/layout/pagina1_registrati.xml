@@ -110,5 +110,16 @@
             android:text="Avanti >"
             android:textColor="@color/white" />
 
+        <Button
+            android:id="@+id/indietro2"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/avanti"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="214dp"
+            android:layout_marginBottom="118dp"
+            android:backgroundTint="@color/verde"
+            android:text="Indietro" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

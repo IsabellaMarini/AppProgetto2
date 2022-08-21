@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="397dp"
+        android:layout_height="790dp"
+        android:background="@drawable/sfondo2"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-2dp">
+
+        <CalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="wrap_content"
+            android:layout_height="304dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="337dp" />
+
+        <TextView
+            android:id="@+id/Data_nascita"
+            android:layout_width="344dp"
+            android:layout_height="39dp"
+            android:layout_above="@+id/calendarView2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="27dp"
+            android:text="@string/Data"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="119dp"
+            android:layout_height="61dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="237dp"
+            android:layout_marginBottom="217dp"
+            android:text="Calcio" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/checkBox"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="175dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="225dp"
+            android:text="Basket" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="109dp"
+            android:layout_height="56dp"
+            android:layout_alignTop="@+id/checkBox"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="249dp"
+            android:layout_marginBottom="174dp"
+            android:text="Tennis" />
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="98dp"
+            android:layout_height="60dp"
+            android:layout_alignStart="@+id/checkBox5"
+            android:layout_alignTop="@+id/checkBox4"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="173dp"
+            android:text="Nuoto" />
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="142dp"
+            android:layout_height="41dp"
+            android:layout_alignTop="@+id/checkBox5"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="219dp"
+            android:layout_marginBottom="102dp"
+            android:text="Formula Uno" />
+
+        <CheckBox
+            android:id="@+id/checkBox9"
+            android:layout_width="114dp"
+            android:layout_height="57dp"
+            android:layout_alignStart="@+id/checkBox7"
+            android:layout_alignTop="@+id/checkBox6"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="186dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="57dp"
+            android:layout_marginBottom="105dp"
+            android:text="Pallavolo" />
+
+        <TextView
+            android:id="@+id/sport"
+            android:layout_width="321dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="284dp"
+            android:text="@string/Sport"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/registrazione"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="63dp"
+            android:layout_marginBottom="43dp"
+            android:backgroundTint="@color/verde"
+            android:text="Conferma" />
+
+        <Button
+            android:id="@+id/indietro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/registrazione"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="192dp"
+            android:layout_marginBottom="45dp"
+            android:backgroundTint="@color/verde"
+            android:text="Indietro" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

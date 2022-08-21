@@ -15,15 +15,15 @@
         <EditText
             android:id="@+id/Password"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="91dp"
-            android:layout_marginTop="348dp"
-            android:layout_marginEnd="109dp"
-            android:layout_marginBottom="337dp"
+            android:layout_marginTop="312dp"
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="349dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
@@ -36,8 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/Password"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="110dp"
-            android:layout_marginBottom="95dp"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="111dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -50,11 +50,24 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="130dp"
-            android:layout_marginEnd="151dp"
+            android:layout_marginStart="227dp"
+            android:layout_marginEnd="53dp"
             android:layout_marginBottom="256dp"
             android:backgroundTint="@color/verde"
             android:text="Accedi" />
+
+        <Button
+            android:id="@+id/indietro3"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-358dp"
+            android:layout_marginEnd="216dp"
+            android:layout_marginBottom="254dp"
+            android:layout_toEndOf="@+id/Accedi2"
+            android:backgroundTint="@color/verde"
+            android:text="indietro" />
 
     </RelativeLayout>
 

@@ -15,6 +15,11 @@ class paginaRegistrati : AppCompatActivity() {
                 val intent = Intent(this, Registrati2::class.java)
                 startActivity(intent)
             }
+        var indietro=findViewById<Button>(R.id.indietro2)
+            indietro.setOnClickListener() {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
     }
 
 

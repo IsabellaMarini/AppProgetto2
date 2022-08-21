@@ -23,7 +23,7 @@
 
         <Button
             android:id="@+id/Accedi"
-            android:layout_width="121dp"
+            android:layout_width="139dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -31,7 +31,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="150dp"
             android:layout_marginTop="210dp"
-            android:layout_marginEnd="138dp"
+            android:layout_marginEnd="120dp"
             android:layout_marginBottom="461dp"
             android:backgroundTint="@color/verde"
             android:text="Accedi"
@@ -40,13 +40,13 @@
 
         <Button
             android:id="@+id/Registrati"
-            android:layout_width="wrap_content"
+            android:layout_width="143dp"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/Accedi"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="435dp"
-            android:layout_marginEnd="141dp"
+            android:layout_marginTop="420dp"
+            android:layout_marginEnd="120dp"
             android:layout_marginBottom="-217dp"
             android:backgroundTint="@color/verde"
             android:text="Registrati" />
