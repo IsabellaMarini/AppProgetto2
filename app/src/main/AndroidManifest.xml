@@ -24,6 +24,9 @@
         <activity
             android:name=".paginaRegistrati">
         </activity>
+        <activity
+            android:name=".Registrati2">
+        </activity>
 
     </application>
 
