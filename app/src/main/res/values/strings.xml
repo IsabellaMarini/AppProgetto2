@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">AppProgetto</string>
     <string name="email">Inserisci la tua e-mail</string>
+    <string name="nome">Inserisci il tuo nome</string>
+    <string name="cognome">Inserisci il tuo cognome</string>
     <string name="password">Inserisci la tua password</string>
     <string name="email2">Inserisci la tua e-mail</string>
-    <string name="password2">Inserisci la tua password</string>
-    <string name="username">Inserisci il tuo username</string>
+    <string name="username">Scegli il tuo username</string>
     <string name="Data">Inserisci la tua data</string>
+    <string name="conferma">Conferma la tua password</string>
 </resources>
