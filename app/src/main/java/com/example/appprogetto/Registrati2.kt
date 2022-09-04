@@ -18,11 +18,11 @@ class Registrati2 : AppCompatActivity() {
         }
         val seleziona = findViewById<CalendarView>(R.id.calendarView2)
         val data_nascita = findViewById<TextView>(R.id.dataNascita)
-            fun stampaData() {
-                seleziona.setOnDateChangeListener { calendarView, year, day, month ->
-                    data_nascita.text = (day.toString() + "/" + month.toString() + "/" + year.toString())
+                seleziona.setFirstDayOfWeek(2)
+                seleziona.setOnDateChangeListener { calendarView, year, month, day->
+                    data_nascita.text = (day.toString() + "/" + ((month)+(1)).toString() + "/" + year.toString())
                 }
-            }
+
         val nome = findViewById<EditText>(R.id.Nome)
         val cognome = findViewById<EditText>(R.id.Cognome)
         val username = findViewById<EditText>(R.id.username)
