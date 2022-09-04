@@ -9,18 +9,16 @@ class paginaRegistrati : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pagina1_registrati)
-        val intent : Intent = getIntent()
+        val intent: Intent = getIntent()
         var avanti = findViewById<Button>(R.id.avanti)
-            avanti.setOnClickListener() {
-                val intent = Intent(this, Registrati2::class.java)
-                startActivity(intent)
-            }
-        var indietro=findViewById<Button>(R.id.indietro2)
-            indietro.setOnClickListener() {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
+        avanti.setOnClickListener() {
+            val intent = Intent(this, Registrati2::class.java)
+            startActivity(intent)
+        }
+        var indietro = findViewById<Button>(R.id.indietro2)
+        indietro.setOnClickListener() {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
-
-
 }

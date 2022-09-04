@@ -7,8 +7,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.ActivityMainBinding
 import com.example.appprogetto.databinding.PaginaAccessoBinding
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+
 
 class paginaAccesso : AppCompatActivity() {
 
@@ -26,9 +25,8 @@ class paginaAccesso : AppCompatActivity() {
         var accedi = findViewById<Button>(R.id.Accedi2)
         var username2 = findViewById<EditText>(R.id.email)
         var password2 = findViewById<EditText>(R.id.Password)
-        val database:DatabaseReference = FirebaseDatabase.getInstance().getReference("users")
         val User = Utenti()
-        
+
 
             accedi.setOnClickListener (){
                 val intent = Intent(this, Home::class.java)
