@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "719252292849",
+    "firebase_url": "https://appmobile-418bc-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "appmobile-418bc",
     "storage_bucket": "appmobile-418bc.appspot.com"
   },
@@ -9,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:719252292849:android:6275f2c3e53af2c2f61550",
         "android_client_info": {
-          "package_name": "com.example.appprogetto"
+          "package_name": "com.example.AppProgetto"
         }
       },
       "oauth_client": [
