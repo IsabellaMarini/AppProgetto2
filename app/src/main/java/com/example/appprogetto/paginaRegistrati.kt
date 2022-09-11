@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class paginaRegistrati : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        var binding: paginaRegistrati
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pagina1_registrati)
         val intent: Intent = getIntent()
         var avanti = findViewById<Button>(R.id.avanti)
         avanti.setOnClickListener() {
+
             val intent = Intent(this, Registrati2::class.java)
             startActivity(intent)
         }
