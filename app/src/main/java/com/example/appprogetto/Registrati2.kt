@@ -16,7 +16,7 @@ class Registrati2 : AppCompatActivity() {
     lateinit var database : DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= Pagina2RegistratiBinding.inflate(layoutInflater)
+        binding = Pagina2RegistratiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var indietro = findViewById<Button>(R.id.indietro)
@@ -38,9 +38,15 @@ class Registrati2 : AppCompatActivity() {
            val email = binding2.email2.text.toString()
            val password = binding2.password2.text.toString()
            val data= binding.dataNascita.text.toString()
-
+           val calcio = binding.calcio.isChecked
+           val basket = binding.basket.isChecked
+           val tennis = binding.tennis.isChecked
+           val nuoto = binding.nuoto.isChecked
+           val pallavolo = binding.pallavolo.isChecked
+           val formula1 = binding.formula1.isChecked
             database = FirebaseDatabase.getInstance().getReference("Utenti")
-            val Utente = Utenti(nome, cognome,username, email, password, data)
+            val Utente = Utenti(nome, cognome,username, email, password, data, calcio, tennis, basket,
+                                nuoto, pallavolo, formula1)
             database.child(username).setValue(Utente).addOnSuccessListener {
                 binding2.Nome.text.clear()
                 binding2.Cognome.text.clear()
@@ -48,6 +54,13 @@ class Registrati2 : AppCompatActivity() {
                 binding2.email2.text.clear()
                 binding2.password2.text.clear()
                 binding.dataNascita.text
+                binding.calcio.isChecked
+                binding.basket.isChecked
+                binding.tennis.isChecked
+                binding.nuoto.isChecked
+                binding.pallavolo.isChecked
+                binding.formula1.isChecked
+
                 Toast.makeText(this, "Dati salvati correttamente", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "errore", Toast.LENGTH_SHORT).show()
