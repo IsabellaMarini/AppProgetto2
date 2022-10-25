@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo2">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-6dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/Name"
+                android:layout_width="396dp"
+                android:layout_height="51dp"
+                android:ems="10"
+                android:hint="@string/nome"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/Surname"
+                android:layout_width="397dp"
+                android:layout_height="61dp"
+                android:ems="10"
+                android:hint="@string/cognome"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/Username"
+                android:layout_width="398dp"
+                android:layout_height="72dp"
+                android:ems="10"
+                android:hint="@string/username"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/Email2"
+                android:layout_width="398dp"
+                android:layout_height="69dp"
+                android:ems="10"
+                android:hint="@string/email2"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/password2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
+            <EditText
+                android:id="@+id/password3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:hint="@string/conferma" />
+
+            <TextView
+                android:id="@+id/Data_nascita"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/Data"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/dataNascita"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="24sp" />
+
+            <CalendarView
+                android:id="@+id/calendarView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/sport"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:hint="@string/Sport"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/basket"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:text="Basket" />
+
+                <CheckBox
+                    android:id="@+id/calcio"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:text="Calcio" />
+
+                <CheckBox
+                    android:id="@+id/tennis"
+                    android:layout_width="114dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tennis" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/nuoto"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nuoto" />
+
+                <CheckBox
+                    android:id="@+id/formula1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Formula Uno" />
+
+                <CheckBox
+                    android:id="@+id/pallavolo"
+                    android:layout_width="114dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pallavolo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/cardview_default_radius"
+                android:paddingRight="@dimen/cardview_default_radius">
+
+                <Button
+                    android:id="@+id/indietro"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/verde"
+                    android:text="indietro"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/registrazione"
+                    android:layout_width="162dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="@color/verde"
+                    android:text="conferma"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
