@@ -4,34 +4,92 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.PaginaAccessoBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class paginaAccesso : AppCompatActivity() {
 
+    private lateinit var binding:PaginaAccessoBinding
+    private lateinit var user: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        var bindig : PaginaAccessoBinding
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.pagina_accesso)
-        val intent : Intent = getIntent()
-        var indietro= findViewById<Button>(R.id.indietro3)
+        binding = PaginaAccessoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        user = FirebaseAuth.getInstance()
+
+
+        var indietro = findViewById<Button>(R.id.indietro3)
         indietro.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        var accedi = findViewById<Button>(R.id.Accedi2)
-        var username2 = findViewById<EditText>(R.id.email)
-        var password2 = findViewById<EditText>(R.id.Password)
-        val User = Utenti()
 
+        binding.Accedi2.setOnClickListener() {
+            utenteRegistrato()
+        }
 
-            accedi.setOnClickListener (){
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
-            }
     }
+    private fun utenteRegistrato(){
+        val email = binding.email.text.toString()
+        val password = binding.Password.text.toString()
 
+        if(email.isNotEmpty() && password.isNotEmpty()){
+
+            user.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(paginaAccesso()){task->
+
+                    if(task.isSuccessful){
+                        Toast.makeText(this,
+                            "utente collegato",
+                            Toast.LENGTH_SHORT).show()
+
+                        startActivity(Intent(this, Home::class.java))
+                        finish()
+                    }else{
+
+                     user.signInWithEmailAndPassword(email,password)
+                         .addOnCompleteListener{mTask->
+
+                             if(mTask.isSuccessful){
+
+                                 startActivity(Intent(this, Home::class.java))
+                                 finish()
+
+                             } else {
+
+                                 Toast.makeText(this,
+                                     task.exception!!.message,
+                                     Toast.LENGTH_SHORT).show()
+                             }
+
+
+                         }
+
+
+
+                    Toast.makeText(this,
+                    task.exception!!.message,
+                    Toast.LENGTH_SHORT).show()
+            }
+
+            }
+
+        }else{
+            Toast.makeText(this,
+                "username e password non possono essere vuoti",
+                Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
 
 }
