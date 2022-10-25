@@ -25,6 +25,8 @@ class paginaAccesso : AppCompatActivity() {
 
         user = FirebaseAuth.getInstance()
 
+        checkIfUserIsLogged()
+
 
         var indietro = findViewById<Button>(R.id.indietro3)
         indietro.setOnClickListener() {
@@ -35,6 +37,16 @@ class paginaAccesso : AppCompatActivity() {
 
         binding.Accedi2.setOnClickListener() {
             utenteRegistrato()
+        }
+
+
+    }
+
+    private fun checkIfUserIsLogged(){
+
+        if(user.currentUser != null) {
+            startActivity(Intent(this, pagina_home::class.java))
+            finish()
         }
 
     }
@@ -52,7 +64,7 @@ class paginaAccesso : AppCompatActivity() {
                             "utente collegato",
                             Toast.LENGTH_SHORT).show()
 
-                        startActivity(Intent(this, Home::class.java))
+                        startActivity(Intent(this, pagina_home::class.java))
                         finish()
                     }else{
 
@@ -61,7 +73,7 @@ class paginaAccesso : AppCompatActivity() {
 
                              if(mTask.isSuccessful){
 
-                                 startActivity(Intent(this, Home::class.java))
+                                 startActivity(Intent(this, pagina_home::class.java))
                                  finish()
 
                              } else {
@@ -85,7 +97,7 @@ class paginaAccesso : AppCompatActivity() {
 
         }else{
             Toast.makeText(this,
-                "username e password non possono essere vuoti",
+                "email e password non possono essere vuoti",
                 Toast.LENGTH_SHORT).show()
         }
 

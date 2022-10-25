@@ -10,8 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppProgetto"
-        tools:targetApi="31"
-        tools:ignore="DataExtractionRules">
+        tools:ignore="DataExtractionRules"
+        tools:targetApi="31">
+        <activity
+            android:name=".pagina_home"
+            android:exported="false" />
+        <activity
+            android:name=".pagina_registrati"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,18 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".paginaAccesso">
-        </activity>
-        <activity
-            android:name=".paginaRegistrati">
-        </activity>
-        <activity
-            android:name=".Registrati2">
-        </activity>
-        <activity
-            android:name=".Home">
-        </activity>
+        <activity android:name=".paginaAccesso" />
+        <activity android:name=".paginaRegistrati" />
+        <activity android:name=".Registrati2" />
+        <activity android:name=".Home" />
     </application>
 
 </manifest>
