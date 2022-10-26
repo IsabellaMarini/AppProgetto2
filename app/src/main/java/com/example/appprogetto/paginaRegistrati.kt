@@ -8,8 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.RegistratiBinding
+import com.google.common.io.Files.map
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
+import kotlin.collections.HashMap
 
 class paginaRegistrati : AppCompatActivity() {
     lateinit var binding: RegistratiBinding
@@ -22,23 +26,24 @@ class paginaRegistrati : AppCompatActivity() {
 
         var indietro = findViewById<Button>(R.id.indietro)
         indietro.setOnClickListener() {
-            val intent = Intent(this, paginaRegistrati::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         val seleziona = findViewById<CalendarView>(R.id.calendarView3)
         val data_nascita = findViewById<TextView>(R.id.dataNascita)
         seleziona.setFirstDayOfWeek(2)
-        seleziona.setOnDateChangeListener { calendarView, year, month, day->
-            data_nascita.text = (day.toString() + "/" + ((month)+(1)).toString() + "/" + year.toString())
+        seleziona.setOnDateChangeListener { calendarView, year, month, day ->
+            data_nascita.text =
+                (day.toString() + "/" + ((month) + (1)).toString() + "/" + year.toString())
         }
 
-        binding.registrazione.setOnClickListener(){
-            val nome= binding.Name.text.toString()
+        binding.registrazione.setOnClickListener() {
+            val nome = binding.Name.text.toString()
             val cognome = binding.Surname.text.toString()
             val username = binding.Username.text.toString()
             val email = binding.Email2.text.toString()
             val password = binding.password2.text.toString()
-            val data= binding.dataNascita.text.toString()
+            val data = binding.dataNascita.text.toString()
             val calcio = binding.calcio.isChecked
             val basket = binding.basket.isChecked
             val tennis = binding.tennis.isChecked
@@ -46,7 +51,21 @@ class paginaRegistrati : AppCompatActivity() {
             val pallavolo = binding.pallavolo.isChecked
             val formula1 = binding.formula1.isChecked
             database = FirebaseDatabase.getInstance().getReference("Utenti")
-            val Utente = Utenti(nome, cognome,username, email, password, data, calcio, tennis, basket,
+            /* val Utente =  HashMap<String, String>()
+                Utente.put("nome",  nome)
+                Utente.put("cognome", cognome)
+                Utente.put("username", binding.Username.text.toString())
+                Utente.put("email", email);
+                Utente.put("password", password);
+                Utente.put("data", data );
+                Utente.put("calcio", calcio)
+                Utente.put("tennis",  tennis)
+                Utente.put("basket",  basket)
+                Utente.put("nuoto", nuoto)
+                Utente.put("pallavolo", pallavolo)
+                Utente.put("formula1", formula1)*/
+            val Utente = Utenti(
+                nome, cognome, username, email, password, data, calcio, tennis, basket,
                 nuoto, pallavolo, formula1)
             database.child(username).setValue(Utente).addOnSuccessListener {
                 binding.Name.text.clear()
@@ -61,16 +80,17 @@ class paginaRegistrati : AppCompatActivity() {
                 binding.nuoto.isChecked
                 binding.pallavolo.isChecked
                 binding.formula1.isChecked
-
-                Toast.makeText(this, "Dati salvati correttamente", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "errore", Toast.LENGTH_SHORT).show()
+                database.child(username).setValue(Utente)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Dati salvati correttamente", Toast.LENGTH_SHORT)
+                            .show()
+                    }.addOnFailureListener {
+                        Toast.makeText(this, "errore", Toast.LENGTH_SHORT).show()
+                    }
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
+    }}
 
 
-
-    }
-}

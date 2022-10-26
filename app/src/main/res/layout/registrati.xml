@@ -24,7 +24,9 @@
                 android:layout_height="51dp"
                 android:ems="10"
                 android:hint="@string/nome"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColorHint="#616161"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/Surname"
@@ -32,15 +34,19 @@
                 android:layout_height="61dp"
                 android:ems="10"
                 android:hint="@string/cognome"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColorHint="#616161"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/Username"
                 android:layout_width="398dp"
-                android:layout_height="72dp"
+                android:layout_height="76dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/username"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:textColorHint="#616161" />
 
             <EditText
                 android:id="@+id/Email2"
@@ -48,7 +54,9 @@
                 android:layout_height="69dp"
                 android:ems="10"
                 android:hint="@string/email2"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress"
+                android:textColorHint="#616161"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/password2"
@@ -56,23 +64,26 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/password"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:inputType="textPassword"
+                android:textColorHint="#616161"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/password3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints=""
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:hint="@string/conferma" />
+                android:hint="@string/conferma"
+                android:inputType="textPassword"
+                android:textColorHint="#616161" />
 
             <TextView
                 android:id="@+id/Data_nascita"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="@string/Data"
+                android:textColorHint="#616161"
                 android:textSize="20sp" />
 
             <TextView
@@ -102,19 +113,19 @@
                     android:id="@+id/basket"
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="Basket" />
+                    android:text="@string/basket" />
 
                 <CheckBox
                     android:id="@+id/calcio"
                     android:layout_width="117dp"
                     android:layout_height="wrap_content"
-                    android:text="Calcio" />
+                    android:text="@string/calcio" />
 
                 <CheckBox
                     android:id="@+id/tennis"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
-                    android:text="Tennis" />
+                    android:text="@string/tennis" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,19 +137,19 @@
                     android:id="@+id/nuoto"
                     android:layout_width="115dp"
                     android:layout_height="wrap_content"
-                    android:text="Nuoto" />
+                    android:text="@string/nuoto" />
 
                 <CheckBox
                     android:id="@+id/formula1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Formula Uno" />
+                    android:text="@string/formula_uno" />
 
                 <CheckBox
                     android:id="@+id/pallavolo"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
-                    android:text="Pallavolo" />
+                    android:text="@string/pallavolo" />
             </LinearLayout>
 
             <LinearLayout
@@ -153,16 +164,18 @@
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/verde"
-                    android:text="indietro"
-                    android:textColor="@color/white" />
+                    android:text="@string/indietro"
+                    android:textColor="@color/white"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/registrazione"
                     android:layout_width="162dp"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/verde"
-                    android:text="conferma"
-                    android:textColor="@color/white" />
+                    android:text="@string/conferma1"
+                    android:textColor="@color/white"
+                    style="?android:attr/buttonBarButtonStyle" />
 
             </LinearLayout>
 

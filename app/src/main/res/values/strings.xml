@@ -9,4 +9,12 @@
     <string name="Data">Seleziona la tua data di nascita:</string>
     <string name="conferma">Conferma la tua password</string>
     <string name="Sport">Seleziona uno o più sport che ti interessano:</string>
+    <string name="basket">Basket</string>
+    <string name="calcio">Calcio</string>
+    <string name="tennis">Tennis</string>
+    <string name="nuoto">Nuoto</string>
+    <string name="formula_uno">Formula Uno</string>
+    <string name="pallavolo">Pallavolo</string>
+    <string name="indietro">indietro</string>
+    <string name="conferma1">conferma</string>
 </resources>

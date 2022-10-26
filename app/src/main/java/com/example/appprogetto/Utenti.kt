@@ -7,3 +7,4 @@ data class Utenti(
     val email: String?=null, val password: String?=null, val data_nascita: String?=null,
     val calcio: Boolean?=null, val tennis: Boolean?=null, val basket: Boolean?=null,
     val nuoto: Boolean?=null, val pallavolo: Boolean?=null, val formula1: Boolean?=null)
+
