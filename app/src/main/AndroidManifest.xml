@@ -28,6 +28,9 @@
             android:name=".paginaRegistrati">
         </activity>
         <activity
+            android:name=".Registrati2">
+        </activity>
+        <activity
             android:name=".Home">
         </activity>
     </application>

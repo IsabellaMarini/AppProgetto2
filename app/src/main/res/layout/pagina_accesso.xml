@@ -14,14 +14,14 @@
 
         <EditText
             android:id="@+id/Password"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_width="252dp"
+            android:layout_height="83dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="91dp"
-            android:layout_marginTop="312dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="299dp"
             android:layout_marginEnd="85dp"
             android:layout_marginBottom="349dp"
             android:ems="10"
@@ -33,13 +33,13 @@
         <EditText
             android:id="@+id/email"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="62dp"
             android:layout_alignBottom="@+id/Password"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="112dp"
             android:layout_marginBottom="111dp"
             android:ems="10"
-            android:hint="@string/email"
+            android:hint="Inserisci la tua email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
