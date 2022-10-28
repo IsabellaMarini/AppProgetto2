@@ -1,7 +1,9 @@
 package com.example.appprogetto
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
@@ -9,18 +11,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.RegistratiBinding
 import com.google.common.io.Files.map
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.util.*
 import kotlin.collections.HashMap
 
 class paginaRegistrati : AppCompatActivity() {
     lateinit var binding: RegistratiBinding
 
-    lateinit var database : DatabaseReference
+    lateinit var database : FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        database = Firebase.firestore
         binding = RegistratiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -37,60 +41,45 @@ class paginaRegistrati : AppCompatActivity() {
                 (day.toString() + "/" + ((month) + (1)).toString() + "/" + year.toString())
         }
 
+        val nome = binding.Name.text.toString()
+        val cognome = binding.Surname.text.toString()
+        val username = binding.Username.text.toString()
+        val email = binding.Email2.text.toString()
+        val password = binding.password2.text.toString()
+        val data = binding.dataNascita.text.toString()
+        val calcio = binding.calcio.isChecked
+        val basket = binding.basket.isChecked
+        val tennis = binding.tennis.isChecked
+        val nuoto = binding.nuoto.isChecked
+        val pallavolo = binding.pallavolo.isChecked
+        val formula1 = binding.formula1.isChecked
         binding.registrazione.setOnClickListener() {
-            val nome = binding.Name.text.toString()
-            val cognome = binding.Surname.text.toString()
-            val username = binding.Username.text.toString()
-            val email = binding.Email2.text.toString()
-            val password = binding.password2.text.toString()
-            val data = binding.dataNascita.text.toString()
-            val calcio = binding.calcio.isChecked
-            val basket = binding.basket.isChecked
-            val tennis = binding.tennis.isChecked
-            val nuoto = binding.nuoto.isChecked
-            val pallavolo = binding.pallavolo.isChecked
-            val formula1 = binding.formula1.isChecked
-            database = FirebaseDatabase.getInstance().getReference("Utenti")
-            /* val Utente =  HashMap<String, String>()
-                Utente.put("nome",  nome)
-                Utente.put("cognome", cognome)
-                Utente.put("username", binding.Username.text.toString())
-                Utente.put("email", email);
-                Utente.put("password", password);
-                Utente.put("data", data );
-                Utente.put("calcio", calcio)
-                Utente.put("tennis",  tennis)
-                Utente.put("basket",  basket)
-                Utente.put("nuoto", nuoto)
-                Utente.put("pallavolo", pallavolo)
-                Utente.put("formula1", formula1)*/
-            val Utente = Utenti(
-                nome, cognome, username, email, password, data, calcio, tennis, basket,
-                nuoto, pallavolo, formula1)
-            database.child(username).setValue(Utente).addOnSuccessListener {
-                binding.Name.text.clear()
-                binding.Surname.text.clear()
-                binding.Username.text.clear()
-                binding.Email2.text.clear()
-                binding.password2.text.clear()
-                binding.dataNascita.text
-                binding.calcio.isChecked
-                binding.basket.isChecked
-                binding.tennis.isChecked
-                binding.nuoto.isChecked
-                binding.pallavolo.isChecked
-                binding.formula1.isChecked
-                database.child(username).setValue(Utente)
-                    .addOnSuccessListener {
-                        Toast.makeText(this, "Dati salvati correttamente", Toast.LENGTH_SHORT)
-                            .show()
-                    }.addOnFailureListener {
-                        Toast.makeText(this, "errore", Toast.LENGTH_SHORT).show()
-                    }
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+
+            val utente =  hashMapOf(
+                "nome" to nome,
+                "cognome" to cognome,
+                "username" to username,
+                "email" to email,
+                "password" to password,
+                "data" to data,
+                "calcio" to calcio,
+                "tennis" to tennis,
+                "basket" to  basket,
+                "nuoto" to nuoto,
+                "pallavolo" to pallavolo,
+                "formula uno" to  formula1
+            )
+            var db = database.collection("Utenti")
+            db.add(utente as Map<String, Any>).addOnSuccessListener{ documentReference->
+                Log.d(TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+            }.addOnFailureListener { e ->
+                Log.w(TAG, "Errore", e)
             }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
-    }}
+
+    }
+    }
 
 

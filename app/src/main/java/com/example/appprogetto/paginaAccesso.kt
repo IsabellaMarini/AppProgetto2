@@ -38,8 +38,6 @@ class paginaAccesso : AppCompatActivity() {
         binding.Accedi2.setOnClickListener() {
             utenteRegistrato()
         }
-
-
     }
 
     private fun checkIfUserIsLogged(){
@@ -56,52 +54,29 @@ class paginaAccesso : AppCompatActivity() {
 
         if(email.isNotEmpty() && password.isNotEmpty()){
 
-            user.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(paginaAccesso()){task->
 
-                    if(task.isSuccessful){
-                        Toast.makeText(this,
-                            "utente collegato",
-                            Toast.LENGTH_SHORT).show()
-
-                        startActivity(Intent(this, pagina_home::class.java))
-                        finish()
-                    }else{
-
-                     user.signInWithEmailAndPassword(email,password)
+             user.signInWithEmailAndPassword(email,password)
                          .addOnCompleteListener{mTask->
 
                              if(mTask.isSuccessful){
-
+                                 Toast.makeText(this,
+                                     "utente collegato",
+                                     Toast.LENGTH_SHORT).show()
                                  startActivity(Intent(this, pagina_home::class.java))
                                  finish()
 
                              } else {
-
                                  Toast.makeText(this,
-                                     task.exception!!.message,
+                                     "email o password sono errati",
                                      Toast.LENGTH_SHORT).show()
                              }
 
-
                          }
 
-
-
-                    Toast.makeText(this,
-                    task.exception!!.message,
-                    Toast.LENGTH_SHORT).show()
-            }
-
-            }
-
-        }else{
+        } else{
             Toast.makeText(this,
                 "email e password non possono essere vuoti",
                 Toast.LENGTH_SHORT).show()
         }
-
-
     }
-
 }

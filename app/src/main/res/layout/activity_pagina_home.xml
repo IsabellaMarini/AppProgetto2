@@ -4,53 +4,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pagina_home">
+    tools:context=".pagina_home"
+    android:background="@drawable/sfondo1">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="407dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sfondo1" />
 
-    <Button
-        android:id="@+id/disconnetti"
-        android:layout_width="151dp"
-        android:layout_height="54dp"
-        android:text="Disconnetti"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.091" />
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/benvenuto"
-        android:layout_width="104dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="28dp"
-        android:text="Benvenuto"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/UserEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/UserEmail"
-        android:layout_width="89dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="12dp"
-        android:text="user email"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/disconnetti"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.102" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/benvenuto"
+                    android:layout_width="104dp"
+                    android:layout_height="69dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Benvenuto"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/UserEmail"
+                    android:layout_width="89dp"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="16dp"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/disconnetti"
+                    android:layout_width="151dp"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/verde"
+                    android:text="Disconnetti" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/aggiungi"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:backgroundTint="@color/verde"
+                android:text="Aggiungi una notizia" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/RicercaCalcio"
+                    android:layout_width="138dp"
+                    android:layout_height="63dp"
+                    android:layout_weight="1"
+                    android:text="@string/calcio" />
+
+                <Switch
+                    android:id="@+id/RicercaTennis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/tennis" />
+
+                <Switch
+                    android:id="@+id/BasketRicerca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="63dp"
+                    android:layout_weight="1"
+                    android:text="@string/basket" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/PallavoloRicerca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="67dp"
+                    android:layout_weight="1"
+                    android:text="@string/pallavolo" />
+
+                <Switch
+                    android:id="@+id/Formula1Ricerca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="67dp"
+                    android:layout_weight="1"
+                    android:text="@string/formula_uno" />
+
+                <Switch
+                    android:id="@+id/NuotoRicerca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="67dp"
+                    android:layout_weight="1"
+                    android:text="@string/nuoto" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/notizia1"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                 />
+
+            <TextView
+                android:id="@+id/notizia2"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                 />
+
+            <TextView
+                android:id="@+id/notizia3"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                />
+
+            <TextView
+                android:id="@+id/notizia4"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                 />
+
+            <TextView
+                android:id="@+id/notizia5"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <TextView
+                android:id="@+id/notizia6"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                />
+
+            <TextView
+                android:id="@+id/notizia7"
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                 />
+
+            <TextView
+                android:id="@+id/notizia8"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                />
+
+            <TextView
+                android:id="@+id/notizia9"
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                />
+
+            <TextView
+                android:id="@+id/notizia10"
+                android:layout_width="match_parent"
+                android:layout_height="92dp"
+                 />
+
+            <TextView
+                android:id="@+id/notizia11"
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                 />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
