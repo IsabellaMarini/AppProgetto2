@@ -41,39 +41,33 @@ class paginaRegistrati : AppCompatActivity() {
                 (day.toString() + "/" + ((month) + (1)).toString() + "/" + year.toString())
         }
 
-        val nome = binding.Name.text.toString()
-        val cognome = binding.Surname.text.toString()
-        val username = binding.Username.text.toString()
-        val email = binding.Email2.text.toString()
-        val password = binding.password2.text.toString()
-        val data = binding.dataNascita.text.toString()
-        val calcio = binding.calcio.isChecked
-        val basket = binding.basket.isChecked
-        val tennis = binding.tennis.isChecked
-        val nuoto = binding.nuoto.isChecked
-        val pallavolo = binding.pallavolo.isChecked
-        val formula1 = binding.formula1.isChecked
         binding.registrazione.setOnClickListener() {
 
             val utente =  hashMapOf(
-                "nome" to nome,
-                "cognome" to cognome,
-                "username" to username,
-                "email" to email,
-                "password" to password,
-                "data" to data,
-                "calcio" to calcio,
-                "tennis" to tennis,
-                "basket" to  basket,
-                "nuoto" to nuoto,
-                "pallavolo" to pallavolo,
-                "formula uno" to  formula1
+                "nome" to binding.Name.text.toString(),
+                "cognome" to  binding.Surname.text.toString(),
+                "username" to binding.Username.text.toString(),
+                "email" to binding.Email2.text.toString(),
+                "password" to binding.password2.text.toString(),
+                "data" to binding.dataNascita.text.toString(),
+                "calcio" to binding.calcio.isChecked,
+                "tennis" to binding.tennis.isChecked,
+                "basket" to  binding.basket.isChecked,
+                "nuoto" to binding.nuoto.isChecked,
+                "pallavolo" to binding.pallavolo.isChecked,
+                "formula uno" to  binding.formula1.isChecked
             )
             var db = database.collection("Utenti")
             db.add(utente as Map<String, Any>).addOnSuccessListener{ documentReference->
                 Log.d(TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+                Toast.makeText(this,
+                    "Dati salvati correttamente",
+                    Toast.LENGTH_SHORT).show()
             }.addOnFailureListener { e ->
                 Log.w(TAG, "Errore", e)
+                Toast.makeText(this,
+                    "Errore",
+                    Toast.LENGTH_SHORT).show()
             }
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

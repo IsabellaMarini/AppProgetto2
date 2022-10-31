@@ -24,7 +24,7 @@
                 android:layout_height="51dp"
                 android:ems="10"
                 android:hint="@string/nome"
-                android:inputType="textPersonName"
+                android:inputType="textNoSuggestions"
                 android:textColorHint="#616161"
                 android:autofillHints="" />
 
@@ -34,7 +34,7 @@
                 android:layout_height="61dp"
                 android:ems="10"
                 android:hint="@string/cognome"
-                android:inputType="textPersonName"
+                android:inputType="textNoSuggestions"
                 android:textColorHint="#616161"
                 android:autofillHints="" />
 
@@ -45,7 +45,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/username"
-                android:inputType="textPersonName"
+                android:inputType="textNoSuggestions"
                 android:textColorHint="#616161" />
 
             <EditText
@@ -54,7 +54,7 @@
                 android:layout_height="69dp"
                 android:ems="10"
                 android:hint="@string/email2"
-                android:inputType="textEmailAddress"
+                android:inputType="textNoSuggestions"
                 android:textColorHint="#616161"
                 android:autofillHints="" />
 
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/password"
-                android:inputType="textPassword"
+                android:inputType="textPassword|textNoSuggestions"
                 android:textColorHint="#616161"
                 android:autofillHints="" />
 
@@ -75,7 +75,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/conferma"
-                android:inputType="textPassword"
+                android:inputType="textPassword|textNoSuggestions"
                 android:textColorHint="#616161" />
 
             <TextView
