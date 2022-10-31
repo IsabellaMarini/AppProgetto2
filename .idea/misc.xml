@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aldop/AndroidStudioProjects/AppProgetto2/app/src/main/res/layout/activity_google.xml" value="0.20153985507246377" />
+        <entry key="..\:/Users/aldop/AndroidStudioProjects/AppProgetto2/app/src/main/res/layout/activity_pagina_home.xml" value="0.20153985507246377" />
+        <entry key="..\:/Users/aldop/AndroidStudioProjects/AppProgetto2/app/src/main/res/layout/pagina_accesso.xml" value="0.25" />
+        <entry key="..\:/Users/aldop/AndroidStudioProjects/AppProgetto2/app/src/main/res/layout/registrati.xml" value="0.20153985507246377" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/AppProgetto/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.119" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/AppProgetto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.119" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/AppProgetto/app/src/main/res/layout/activity_main.xml" value="0.2842430484037075" />
