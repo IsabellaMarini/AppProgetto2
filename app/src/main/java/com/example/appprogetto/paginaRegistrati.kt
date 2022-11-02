@@ -16,6 +16,7 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
+import java.util.Calendar.YEAR
 import kotlin.collections.HashMap
 
 class paginaRegistrati : AppCompatActivity() {
@@ -27,13 +28,17 @@ class paginaRegistrati : AppCompatActivity() {
         database = Firebase.firestore
         binding = RegistratiBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        var password = binding.password2.text.toString()
+        var conferma = binding.password3.text.toString()
         var indietro = findViewById<Button>(R.id.indietro)
         indietro.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        val calendar = Calendar.getInstance()
+        calendar.set(YEAR, 2008)
         val seleziona = findViewById<CalendarView>(R.id.calendarView3)
+        seleziona.setDate(calendar.getTimeInMillis(), false, false)
         val data_nascita = findViewById<TextView>(R.id.dataNascita)
         seleziona.setFirstDayOfWeek(2)
         seleziona.setOnDateChangeListener { calendarView, year, month, day ->
@@ -42,7 +47,6 @@ class paginaRegistrati : AppCompatActivity() {
         }
 
         binding.registrazione.setOnClickListener() {
-
             val utente =  hashMapOf(
                 "nome" to binding.Name.text.toString(),
                 "cognome" to  binding.Surname.text.toString(),
@@ -57,23 +61,40 @@ class paginaRegistrati : AppCompatActivity() {
                 "pallavolo" to binding.pallavolo.isChecked,
                 "formula uno" to  binding.formula1.isChecked
             )
-            var db = database.collection("Utenti")
-            db.add(utente as Map<String, Any>).addOnSuccessListener{ documentReference->
-                Log.d(TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+            if (binding.Name.text.isEmpty() || binding.Surname.text.isEmpty() || binding.Username.text.isEmpty()
+                || binding.Email2.text.isEmpty() || binding.password2.text.isEmpty() || binding.dataNascita.text.isEmpty()){
                 Toast.makeText(this,
-                    "Dati salvati correttamente",
-                    Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener { e ->
-                Log.w(TAG, "Errore", e)
-                Toast.makeText(this,
-                    "Errore",
-                    Toast.LENGTH_SHORT).show()
+                    "Dati mancanti",
+                    Toast.LENGTH_SHORT).show()}
+            /*else
+                if(password != conferma){
+                    Toast.makeText(this,
+                        "Le password devono essere uguali",
+                        Toast.LENGTH_SHORT).show()
+                }*/
+                else{
+                    var db = database.collection("Utenti")
+                    db.add(utente as Map<String, Any>).addOnSuccessListener{ documentReference->
+                        Log.d(TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+                        Toast.makeText(this,
+                            "Dati salvati correttamente",
+                            Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener { e ->
+                        Log.w(TAG, "Errore", e)
+                        Toast.makeText(this,
+                            "Errore",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)}
             }
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+            }
+    }
 
-    }
-    }
+
+
+
+
+
 
 
