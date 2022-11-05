@@ -15,8 +15,8 @@ import com.google.firebase.ktx.Firebase
 class pagina_home : AppCompatActivity() {
 
     private lateinit var binding: ActivityPaginaHomeBinding
-    private lateinit var user:FirebaseAuth
-    private lateinit var db:FirebaseFirestore
+    private lateinit var user: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,29 +25,42 @@ class pagina_home : AppCompatActivity() {
         setContentView(binding.root)
 
         user = FirebaseAuth.getInstance()
-        if(user.currentUser != null) {
-            user.currentUser?.let {
-                binding.UserEmail.text = it.email
+        user.currentUser?.uid.let {
+            if (it != null) {
+                db.collection("Utenti").document(it.toString()).get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+                            Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                            binding.UserNome.text = document.getString("nome")
+                        } else {
+                            Log.d(TAG, "No such document")
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.d(TAG, "get failed with ", exception)
+                    }
             }
         }
 
-        var notizie= db.collection("Notizie").get().addOnSuccessListener {    documents ->
-            for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
-            }
-        }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-        }
-
-        binding.notizia.text = notizie.toString()
-
-        binding.disconnetti.setOnClickListener{
-            user.signOut()
-            startActivity(
-                Intent(this, MainActivity::class.java)
-            )
-            finish()
+    var notizie = db.collection("Notizie").get().addOnSuccessListener { documents ->
+        for (document in documents) {
+            Log.d(TAG, "${document.id} => ${document.data}")
+            binding.titoloNotizia.text = document.getString("Titolo")
+            binding.notizia.text = document.getString("testo")
         }
     }
+        .addOnFailureListener { exception ->
+            Log.w(TAG, "Error getting documents: ", exception)
+        }
+
+    binding.disconnetti.setOnClickListener{
+        user.signOut()
+        startActivity(
+            Intent(this, MainActivity::class.java)
+        )
+        finish()
 }
+    binding.aggiungi.setOnClickListener{
+        startActivity(
+            Intent(this, AggiungiNotizia::class.java))
+    }}}

@@ -8,7 +8,7 @@
     <string name="username">Scegli il tuo username</string>
     <string name="Data">Seleziona la tua data di nascita:</string>
     <string name="conferma">Conferma la tua password</string>
-    <string name="Sport">Seleziona uno o più sport che ti interessano:</string>
+    <string name="Sport">Seleziona l\'ambito della tua notizia</string>
     <string name="basket">Basket</string>
     <string name="calcio">Calcio</string>
     <string name="tennis">Tennis</string>
@@ -17,4 +17,6 @@
     <string name="pallavolo">Pallavolo</string>
     <string name="indietro">indietro</string>
     <string name="conferma1">conferma</string>
+    <string name="titolo">Inserisci un titolo</string>
+    <string name="notizia">Inserisci la notizia</string>
 </resources>

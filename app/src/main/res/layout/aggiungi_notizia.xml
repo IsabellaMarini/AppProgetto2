@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AggiungiNotizia"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/sfondo2"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/titolo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/titolo"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/articolo"
+                android:layout_width="match_parent"
+                android:layout_height="269dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/notizia"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="@string/Sport" />
+
+            <TextView
+                android:id="@+id/ambito"
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="129dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/calcioAmbito"
+                        android:layout_width="138dp"
+                        android:layout_height="76dp"
+                        android:duplicateParentState="false"
+                        android:text="@string/calcio" />
+
+                    <RadioButton
+                        android:id="@+id/basketAmbito"
+                        android:layout_width="134dp"
+                        android:layout_height="76dp"
+                        android:text="@string/basket" />
+
+                    <RadioButton
+                        android:id="@+id/formulaunoAmbito"
+                        android:layout_width="144dp"
+                        android:layout_height="match_parent"
+                        android:text="@string/formula_uno" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/nuotoAmbito"
+                        android:layout_width="88dp"
+                        android:layout_height="61dp"
+                        android:layout_weight="1"
+                        android:text="@string/nuoto" />
+
+                    <RadioButton
+                        android:id="@+id/pallavoloAmbito"
+                        android:layout_width="72dp"
+                        android:layout_height="63dp"
+                        android:layout_weight="1"
+                        android:text="@string/pallavolo" />
+
+                    <RadioButton
+                        android:id="@+id/tennisAmbito"
+                        android:layout_width="91dp"
+                        android:layout_height="63dp"
+                        android:layout_weight="1"
+                        android:text="@string/tennis" />
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/conferma"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/verde"
+                android:insetLeft="100dp"
+                android:text="@string/conferma1" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
