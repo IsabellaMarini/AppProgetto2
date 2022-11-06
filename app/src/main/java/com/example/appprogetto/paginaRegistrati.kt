@@ -54,12 +54,6 @@ class paginaRegistrati : AppCompatActivity() {
                 "email" to binding.Email2.text.toString(),
                 "password" to binding.password2.text.toString(),
                 "data" to binding.dataNascita.text.toString(),
-                "calcio" to binding.calcio.isChecked,
-                "tennis" to binding.tennis.isChecked,
-                "basket" to  binding.basket.isChecked,
-                "nuoto" to binding.nuoto.isChecked,
-                "pallavolo" to binding.pallavolo.isChecked,
-                "formula uno" to  binding.formula1.isChecked
             )
             if (binding.Name.text.isEmpty() || binding.Surname.text.isEmpty() || binding.Username.text.isEmpty()
                 || binding.Email2.text.isEmpty() || binding.password2.text.isEmpty() || binding.dataNascita.text.isEmpty()){

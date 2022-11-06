@@ -97,61 +97,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/sport"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:hint="@string/Sport"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/basket"
-                    android:layout_width="117dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/basket" />
-
-                <CheckBox
-                    android:id="@+id/calcio"
-                    android:layout_width="117dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calcio" />
-
-                <CheckBox
-                    android:id="@+id/tennis"
-                    android:layout_width="114dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tennis" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/nuoto"
-                    android:layout_width="115dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nuoto" />
-
-                <CheckBox
-                    android:id="@+id/formula1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/formula_uno" />
-
-                <CheckBox
-                    android:id="@+id/pallavolo"
-                    android:layout_width="114dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/pallavolo" />
-            </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
