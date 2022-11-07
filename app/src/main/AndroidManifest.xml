@@ -29,9 +29,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".paginaRegistrati" />
-        <activity android:name=".pagina_home" />
-        <activity android:name=".AggiungiNotizia" />
+        <activity
+            android:name=".paginaRegistrati"
+            android:exported="false"/>
+        <activity
+            android:name=".pagina_home"
+            android:exported="false"/>
+        <activity
+            android:name=".AggiungiNotizia"
+            android:exported="false"/>
     </application>
 
 </manifest>
