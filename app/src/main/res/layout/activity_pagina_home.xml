@@ -43,7 +43,8 @@
                     android:layout_width="151dp"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/verde"
-                    android:text="Disconnetti" />
+                    android:text="@string/disconnetti"
+                    android:textColor="#000000" />
 
             </LinearLayout>
 
@@ -52,7 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:backgroundTint="@color/verde"
-                android:text="Aggiungi una notizia" />
+                android:text="@string/aggiungi_una_notizia"
+                android:textColor="#000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,14 +111,13 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/titolo_notizia"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notizie"
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
-            <TextView
-                android:id="@+id/notizia"
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="472dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
 
         </LinearLayout>
     </ScrollView>

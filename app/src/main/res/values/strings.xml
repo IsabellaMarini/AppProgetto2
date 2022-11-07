@@ -19,4 +19,6 @@
     <string name="conferma1">conferma</string>
     <string name="titolo">Inserisci un titolo</string>
     <string name="notizia">Inserisci la notizia</string>
+    <string name="aggiungi_una_notizia">Aggiungi una notizia</string>
+    <string name="disconnetti">Disconnetti</string>
 </resources>
