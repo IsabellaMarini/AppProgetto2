@@ -35,12 +35,14 @@ class paginaRegistrati : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         val calendar = Calendar.getInstance()
         calendar.set(YEAR, 2008)
         val seleziona = findViewById<CalendarView>(R.id.calendarView3)
         seleziona.setDate(calendar.getTimeInMillis(), false, false)
         val data_nascita = findViewById<TextView>(R.id.dataNascita)
         seleziona.setFirstDayOfWeek(2)
+
         seleziona.setOnDateChangeListener { calendarView, year, month, day ->
             data_nascita.text =
                 (day.toString() + "/" + ((month) + (1)).toString() + "/" + year.toString())

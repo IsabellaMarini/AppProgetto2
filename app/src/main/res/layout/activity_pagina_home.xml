@@ -114,8 +114,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/notizie"
                 android:layout_width="match_parent"
-                android:layout_height="474dp"
-                android:background="@drawable/sfondo2">
+                android:layout_height="472dp">
 
             </androidx.recyclerview.widget.RecyclerView>
 

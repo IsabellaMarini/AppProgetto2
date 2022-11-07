@@ -41,6 +41,7 @@ class pagina_home : AppCompatActivity() {
         notizie= arrayListOf()
         myAdapter= MyAdapter(notizie)
         recyclerView.adapter = myAdapter
+
         user = FirebaseAuth.getInstance()
         user.currentUser?.uid.let {
             if (it != null) {
@@ -58,17 +59,32 @@ class pagina_home : AppCompatActivity() {
                     }
             }
         }
-    var notizia = db.collection("Notizie").get().addOnSuccessListener { documents ->
-        for (document in documents) {
-            Log.d(TAG, "${document.id} => ${document.data}")
-            notizie.add(document.toObject(Notizie::class.java))
-        }
-        myAdapter.notifyDataSetChanged()
-    }
-        .addOnFailureListener { exception ->
-            Log.w(TAG, "Error getting documents: ", exception)
-        }
 
+        if(binding.RicercaCalcio.isChecked){
+            db.collection("Notizie").whereEqualTo("ambito", binding.RicercaCalcio.text).get()
+                .addOnSuccessListener{ documents ->
+                    for (document in documents) {
+                        Log.d(TAG, "${document.id} => ${document.data}")
+                        notizie.add(document.toObject(Notizie::class.java))
+                }
+                    myAdapter.notifyDataSetChanged()
+                }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
+        }
+        else {
+            db.collection("Notizie").get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                    notizie.add(document.toObject(Notizie::class.java))
+                }
+                myAdapter.notifyDataSetChanged()
+            }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
+        }
 
         
     binding.disconnetti.setOnClickListener{

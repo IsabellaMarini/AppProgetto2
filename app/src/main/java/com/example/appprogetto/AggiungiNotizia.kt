@@ -46,7 +46,7 @@ class AggiungiNotizia: AppCompatActivity() {
         binding.conferma.setOnClickListener() {
             val notizia =  hashMapOf(
                 "titolo" to binding.titolo.text.toString(),
-                "notizia" to  binding.articolo.text.toString(),
+                "testo" to  binding.articolo.text.toString(),
                 "ambito" to binding.ambito.text.toString(),
             )
             if (binding.titolo.text.isEmpty() || binding.articolo.text.isEmpty() || binding.ambito.text.isEmpty()) {
