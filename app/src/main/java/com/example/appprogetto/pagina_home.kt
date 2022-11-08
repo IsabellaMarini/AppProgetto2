@@ -60,20 +60,7 @@ class pagina_home : AppCompatActivity() {
             }
         }
 
-        if(binding.RicercaCalcio.isChecked){
-            db.collection("Notizie").whereEqualTo("ambito", binding.RicercaCalcio.text).get()
-                .addOnSuccessListener{ documents ->
-                    for (document in documents) {
-                        Log.d(TAG, "${document.id} => ${document.data}")
-                        notizie.add(document.toObject(Notizie::class.java))
-                }
-                    myAdapter.notifyDataSetChanged()
-                }
-                .addOnFailureListener { exception ->
-                    Log.w(TAG, "Error getting documents: ", exception)
-                }
-        }
-        else {
+
             db.collection("Notizie").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     Log.d(TAG, "${document.id} => ${document.data}")
@@ -84,20 +71,18 @@ class pagina_home : AppCompatActivity() {
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents: ", exception)
                 }
-        }
-
-        
-    binding.disconnetti.setOnClickListener{
-        user.signOut()
-        startActivity(
-            Intent(this, MainActivity::class.java)
-        )
-        finish()
-}
-    binding.aggiungi.setOnClickListener{
-        startActivity(
-            Intent(this, AggiungiNotizia::class.java))
-    }}
 
 
-}
+
+            binding.disconnetti.setOnClickListener{
+                user.signOut()
+                startActivity(   Intent(this, MainActivity::class.java)
+                )
+                finish()
+            }
+            binding.aggiungi.setOnClickListener{
+                startActivity(
+                    Intent(this, AggiungiNotizia::class.java)) }
+        }}
+
+

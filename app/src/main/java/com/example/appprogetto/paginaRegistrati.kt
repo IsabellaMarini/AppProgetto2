@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.RegistratiBinding
 import com.google.common.io.Files.map
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -28,6 +29,8 @@ class paginaRegistrati : AppCompatActivity() {
         database = Firebase.firestore
         binding = RegistratiBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var user = FirebaseAuth.getInstance()
+        var email = binding.Email2.text.toString()
         var password = binding.password2.text.toString()
         var conferma = binding.password3.text.toString()
         var indietro = findViewById<Button>(R.id.indietro)
@@ -62,30 +65,34 @@ class paginaRegistrati : AppCompatActivity() {
                 Toast.makeText(this,
                     "Dati mancanti",
                     Toast.LENGTH_SHORT).show()}
-            /*else
-                if(password != conferma){
+            else if (password != conferma) {
+
+
                     Toast.makeText(this,
                         "Le password devono essere uguali",
                         Toast.LENGTH_SHORT).show()
-                }*/
+            }
                 else{
-                    var db = database.collection("Utenti")
-                    db.add(utente as Map<String, Any>).addOnSuccessListener{ documentReference->
-                        Log.d(TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+
+                    var db = database.collection("Users")
+                    db.add(utente as Map<String, Any>).addOnSuccessListener{
+                        Log.d(TAG, "I dati sono stati salvati correttamente: ${binding.Username.text}")
                         Toast.makeText(this,
                             "Dati salvati correttamente",
                             Toast.LENGTH_SHORT).show()
+
                     }.addOnFailureListener { e ->
                         Log.w(TAG, "Errore", e)
                         Toast.makeText(this,
                             "Errore",
                             Toast.LENGTH_SHORT).show()
-                    }
+                    }}
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)}
-            }
-            }
-    }
+            }}
+
+
+
 
 
 
