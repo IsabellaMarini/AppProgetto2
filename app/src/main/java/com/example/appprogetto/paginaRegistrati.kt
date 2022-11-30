@@ -58,9 +58,6 @@ class paginaRegistrati : AppCompatActivity() {
         }
 
 
-        fun updateUI(currentUser: FirebaseUser?) {
-
-        }
         binding.registrazione.setOnClickListener() {
             var utente =  hashMapOf(
                 "nome" to binding.Name.text.toString(),
@@ -75,7 +72,10 @@ class paginaRegistrati : AppCompatActivity() {
                 mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener{
                         val currentUser = mAuth.currentUser
-                        updateUI(currentUser)
+                        database.collection("Users").document(mAuth.currentUser!!.uid)
+                        
+
+
                         Log.d(TAG, "I dati sono stati salvati correttamente: ${binding.Username.text}")
                         Toast.makeText(this,
                             "Provider creato",
@@ -94,8 +94,8 @@ class paginaRegistrati : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
             }
             else{
-                var db = database.collection("Users")
-                db.add(utente as Map<String, Any>).addOnSuccessListener{
+                var db = database.collection("Users").document(binding.Username.text.toString())
+                db.set(utente as Map<String, Any>).addOnSuccessListener{
                     Log.d(TAG, "I dati sono stati salvati correttamente: ${binding.Username.text}")
                         Toast.makeText(this,
                             "Dati salvati correttamente",
