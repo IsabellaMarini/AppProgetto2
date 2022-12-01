@@ -50,13 +50,13 @@
 
             <EditText
                 android:id="@+id/Email2"
-                android:layout_width="398dp"
-                android:layout_height="69dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:ems="10"
+                android:inputType="textEmailAddress"
                 android:hint="@string/email2"
-                android:inputType="textNoSuggestions"
                 android:textColorHint="#616161"
-                android:autofillHints="" />
+                android:autofillHints=""/>
 
             <EditText
                 android:id="@+id/password2"

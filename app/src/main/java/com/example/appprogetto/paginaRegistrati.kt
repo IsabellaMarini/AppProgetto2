@@ -10,18 +10,23 @@ import android.widget.CalendarView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
+
 import com.example.appprogetto.databinding.RegistratiBinding
-import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+
+
 import java.util.*
 import java.util.Calendar.YEAR
+
 
 class paginaRegistrati : AppCompatActivity() {
     lateinit var binding: RegistratiBinding
@@ -32,11 +37,10 @@ class paginaRegistrati : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         database = Firebase.firestore
         binding = RegistratiBinding.inflate(layoutInflater)
-        var id = arrayListOf<String>()
         setContentView(binding.root)
-        mAuth= Firebase.auth
-        var email = binding.Email2.text.toString()
-        var password = binding.password2.text.toString()
+        mAuth = Firebase.auth
+        var email = binding.Email2.text.toString()!!
+        var password = binding.password2.text.toString()!!
         var conferma = binding.password3.text.toString()
 
         var indietro = findViewById<Button>(R.id.indietro)
@@ -68,58 +72,63 @@ class paginaRegistrati : AppCompatActivity() {
                 "data" to binding.dataNascita.text.toString(),
             )
 
-            fun registra(email: String, password: String) {
-                mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener{
-                        val currentUser = mAuth.currentUser
-                        database.collection("Users").document(mAuth.currentUser!!.uid)
-                        
-
-
-                        Log.d(TAG, "I dati sono stati salvati correttamente: ${binding.Username.text}")
-                        Toast.makeText(this,
-                            "Provider creato",
-                            Toast.LENGTH_SHORT).show()
-                        }
-                    }
 
             if (binding.Name.text.isEmpty() || binding.Surname.text.isEmpty() || binding.Username.text.isEmpty()
                 || binding.Email2.text.isEmpty() || binding.password2.text.isEmpty() || binding.dataNascita.text.isEmpty()){
                 Toast.makeText(this,
                     "Dati mancanti",
                     Toast.LENGTH_SHORT).show()}
-            else if (password != conferma) {
-                    Toast.makeText(this,
-                        "Le password devono essere uguali",
-                        Toast.LENGTH_SHORT).show()
+
+            else if((binding.password2.text.toString()).length<8){
+                Toast.makeText(this,
+                    "La password deve contenere almeno 8 caratteri",
+                    Toast.LENGTH_SHORT).show()
             }
-            else{
-                var db = database.collection("Users").document(binding.Username.text.toString())
-                db.set(utente as Map<String, Any>).addOnSuccessListener{
-                    Log.d(TAG, "I dati sono stati salvati correttamente: ${binding.Username.text}")
-                        Toast.makeText(this,
-                            "Dati salvati correttamente",
-                            Toast.LENGTH_SHORT).show()
-                            registra(email, password)
+
+            else if(!(binding.Email2.text.isEmpty()) || !(binding.password2.text.isEmpty())) {
+                mAuth.createUserWithEmailAndPassword(binding.Email2.text.toString(),
+                    binding.password2.text.toString()
+                )
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            val docRef: DocumentReference =
+                                database.collection("Users")
+                                    .document(binding.Username.text.toString())
+                            docRef.set(utente).addOnSuccessListener {
+
+                                Log.d(TAG, "Profilo utente creato")
+
+                            }
+                        } else {
+                            Toast.makeText(
+                                this, it.exception.toString(),
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        }
                     }.addOnFailureListener { e ->
                         Log.w(TAG, "Errore", e)
-                        Toast.makeText(this,
+                        Toast.makeText(
+                            this,
                             "Errore",
-                            Toast.LENGTH_SHORT).show()
-                    }}
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)}}
-    }
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                var db = database.collection("Users").document(binding.Username.text.toString())
+                db.set(utente as Map<String, Any>).addOnSuccessListener{
+                    Toast.makeText(this,
+                        "Dati salvati correttamente",
+                        Toast.LENGTH_SHORT).show()
 
 
+                }.addOnFailureListener { e ->
+                    Log.w(TAG, "Errore", e)
+                    Toast.makeText(this,
+                        "Errore",
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
 
-
-
-
-
-
-
-
-
-
-
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)}}
+}
