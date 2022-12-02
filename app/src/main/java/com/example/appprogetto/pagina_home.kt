@@ -44,16 +44,6 @@ class pagina_home : AppCompatActivity() {
 
         user = FirebaseAuth.getInstance()
         binding.UserNome.text= user.currentUser?.email
-        fun dati(){db.collection("Notizie").get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
-                notizie.add(document.toObject(Notizie::class.java))
-            }
-            myAdapter.notifyDataSetChanged()
-        }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }}
 
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){
