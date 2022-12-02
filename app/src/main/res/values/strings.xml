@@ -22,4 +22,5 @@
     <string name="aggiungi_una_notizia">Aggiungi una notizia</string>
     <string name="disconnetti">Disconnetti</string>
     <string name="descrizione">Per visualizzare le notizie è necessario selezionare uno o più sport</string>
+    <string name="accedianonimo">Oppure accedi in anonimo</string>
 </resources>
