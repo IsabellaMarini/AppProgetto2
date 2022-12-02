@@ -39,7 +39,7 @@
             android:layout_marginEnd="112dp"
             android:layout_marginBottom="111dp"
             android:ems="10"
-            android:hint="Inserisci la tua email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
@@ -54,7 +54,7 @@
             android:layout_marginEnd="53dp"
             android:layout_marginBottom="256dp"
             android:backgroundTint="@color/verde"
-            android:text="Accedi" />
+            android:text="@string/Accedi2" />
 
         <Button
             android:id="@+id/indietro3"
@@ -67,7 +67,7 @@
             android:layout_marginBottom="254dp"
             android:layout_toEndOf="@+id/Accedi2"
             android:backgroundTint="@color/verde"
-            android:text="indietro" />
+            android:text="@string/indietro3" />
 
     </RelativeLayout>
 

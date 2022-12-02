@@ -34,8 +34,10 @@
             android:layout_marginEnd="120dp"
             android:layout_marginBottom="442dp"
             android:backgroundTint="@color/verde"
-            android:text="Accedi"
+            android:text="@string/Accedi"
             android:textColor="@color/white"
+            android:textColorHint="#F3EFEF"
+            android:textSize="14sp"
             tools:ignore="TextContrastCheck" />
 
         <Button
@@ -49,8 +51,10 @@
             android:layout_marginEnd="123dp"
             android:layout_marginBottom="-228dp"
             android:backgroundTint="@color/verde"
-            android:text="Registrati"
+            android:text="@string/Registrati"
             android:textColor="@color/white"
+            android:textColorHint="#F3EFEF"
+            app:iconTint="#FAF6F6"
             tools:ignore="TextContrastCheck" />
 
     </RelativeLayout>
