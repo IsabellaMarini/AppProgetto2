@@ -43,22 +43,7 @@ class pagina_home : AppCompatActivity() {
         recyclerView.adapter = myAdapter
 
         user = FirebaseAuth.getInstance()
-        user.currentUser?.uid.let {
-            if (it != null) {
-                db.collection("Utenti").document(it.toString()).get()
-                    .addOnSuccessListener { document ->
-                        if (document != null) {
-                            Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                            binding.UserNome.text = document.getString("nome")
-                        } else {
-                            Log.d(TAG, "No such document")
-                        }
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.d(TAG, "get failed with ", exception)
-                    }
-            }
-        }
+        binding.UserNome.text= user.currentUser?.email
         fun dati(){db.collection("Notizie").get().addOnSuccessListener { documents ->
             for (document in documents) {
                 Log.d(TAG, "${document.id} => ${document.data}")

@@ -9,19 +9,23 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appprogetto.databinding.AggiungiNotiziaBinding
 import com.example.appprogetto.databinding.RegistratiBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class AggiungiNotizia: AppCompatActivity() {
     lateinit var binding: AggiungiNotiziaBinding
-
+    lateinit var auth: FirebaseAuth
     lateinit var database : FirebaseFirestore
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
         database = Firebase.firestore
         binding = AggiungiNotiziaBinding.inflate(layoutInflater)
+        auth= FirebaseAuth.getInstance()
+
     setContentView(binding.root)
 
         binding.calcioAmbito.setOnClickListener(){
@@ -43,11 +47,13 @@ class AggiungiNotizia: AppCompatActivity() {
             binding.ambito.text = (binding.nuotoAmbito.text)
         }
 
-        binding.conferma.setOnClickListener() {
+
+
             val notizia =  hashMapOf(
                 "titolo" to binding.titolo.text.toString(),
-                "testo" to  binding.articolo.text.toString(),
+                "testo" to binding.articolo.text.toString(),
                 "ambito" to binding.ambito.text.toString(),
+                "utente" to auth.currentUser!!.email
             )
             if (binding.titolo.text.isEmpty() || binding.articolo.text.isEmpty() || binding.ambito.text.isEmpty()) {
                 Toast.makeText(this,
@@ -71,4 +77,5 @@ class AggiungiNotizia: AppCompatActivity() {
                 startActivity(intent)}
         }
 
-}}
+}
+

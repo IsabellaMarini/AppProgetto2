@@ -20,6 +20,7 @@ class MyAdapter(private val Notizie: ArrayList<Notizie>): RecyclerView.Adapter<M
           holder.testo.text = notizia.testo
           holder.ambito.text = notizia.ambito
           holder.cardView.setBackgroundResource(R.color.gray)
+          holder.Proprietario.text = notizia.user
      }
      override fun getItemCount(): Int {
           return Notizie.size
@@ -29,5 +30,6 @@ class MyAdapter(private val Notizie: ArrayList<Notizie>): RecyclerView.Adapter<M
           val testo : TextView = itemView.findViewById(R.id.articolo2)
           val ambito: TextView = itemView.findViewById(R.id.ambito2)
           val cardView: CardView = itemView.findViewById(R.id.cardView)
+          val Proprietario: TextView = itemView.findViewById(R.id.Proprietario)
      }
 }

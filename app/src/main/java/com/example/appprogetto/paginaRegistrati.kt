@@ -93,11 +93,9 @@ class paginaRegistrati : AppCompatActivity() {
                         if (it.isSuccessful) {
                             val docRef: DocumentReference =
                                 database.collection("Users")
-                                    .document(binding.Username.text.toString())
+                                    .document(binding.Email2.text.toString())
                             docRef.set(utente).addOnSuccessListener {
-
                                 Log.d(TAG, "Profilo utente creato")
-
                             }
                         } else {
                             Toast.makeText(
@@ -114,7 +112,7 @@ class paginaRegistrati : AppCompatActivity() {
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-                var db = database.collection("Users").document(binding.Username.text.toString())
+                var db = database.collection("Users").document(binding.Email2.text.toString())
                 db.set(utente as Map<String, Any>).addOnSuccessListener{
                     Toast.makeText(this,
                         "Dati salvati correttamente",
