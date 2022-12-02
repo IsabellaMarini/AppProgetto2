@@ -158,30 +158,33 @@ class pagina_home : AppCompatActivity() {
                 }}
        binding.PallavoloRicerca.setOnCheckedChangeListener { _, isChecked ->
 
-                if(isChecked){
+           if (isChecked) {
 
-                    db.collection("Notizie").whereEqualTo("ambito", "Pallavolo").get().addOnSuccessListener { documents ->
-                        for (document in documents) {
-                            Log.d(TAG, "${document.id} => ${document.data}")
-                            notizie.add(document.toObject(Notizie::class.java))
-                        }
-                        myAdapter.notifyDataSetChanged()
-                    }
-                        .addOnFailureListener { exception ->
-                            Log.w(TAG, "Error getting documents: ", exception)
-                        }
-                }     else{
-                    db.collection("Notizie").whereEqualTo("ambito", "Pallavolo").get().addOnSuccessListener { documents ->
-                        for (document in documents) {
-                            Log.d(TAG, "${document.id} => ${document.data}")
-                            notizie.remove(document.toObject(Notizie::class.java))
-                        }
-                        myAdapter.notifyDataSetChanged()
-                    }
-                        .addOnFailureListener { exception ->
-                            Log.w(TAG, "Error getting documents: ", exception)
-                        }
-                }
+               db.collection("Notizie").whereEqualTo("ambito", "Pallavolo").get()
+                   .addOnSuccessListener { documents ->
+                       for (document in documents) {
+                           Log.d(TAG, "${document.id} => ${document.data}")
+                           notizie.add(document.toObject(Notizie::class.java))
+                       }
+                       myAdapter.notifyDataSetChanged()
+                   }
+                   .addOnFailureListener { exception ->
+                       Log.w(TAG, "Error getting documents: ", exception)
+                   }
+           } else {
+               db.collection("Notizie").whereEqualTo("ambito", "Pallavolo").get()
+                   .addOnSuccessListener { documents ->
+                       for (document in documents) {
+                           Log.d(TAG, "${document.id} => ${document.data}")
+                           notizie.remove(document.toObject(Notizie::class.java))
+                       }
+                       myAdapter.notifyDataSetChanged()
+                   }
+                   .addOnFailureListener { exception ->
+                       Log.w(TAG, "Error getting documents: ", exception)
+                   }
+           }
+       }
        binding.Formula1Ricerca.setOnCheckedChangeListener { _, isChecked ->
 
             if(isChecked){
@@ -220,6 +223,6 @@ class pagina_home : AppCompatActivity() {
 
 
         }
-}}
+}
 
 

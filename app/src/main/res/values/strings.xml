@@ -1,4 +1,9 @@
 <resources>
+    <string name="Accedi">ACCEDI</string>
+    <string name="Registrati">REGISTRATI</string>
+    <string name="benvenuto">Benvenuto</string>
+    <string name="indietro3">INDIETRO</string>
+    <string name="Accedi2">ACCEDI</string>
     <string name="app_name">AppProgetto</string>
     <string name="email">Inserisci la tua e-mail</string>
     <string name="nome">Inserisci il tuo nome</string>
@@ -22,4 +27,5 @@
     <string name="aggiungi_una_notizia">Aggiungi una notizia</string>
     <string name="disconnetti">Disconnetti</string>
     <string name="descrizione">Per visualizzare le notizie è necessario selezionare uno o più sport</string>
+    <string name="accedianonimo">Oppure accedi in anonimo</string>
 </resources>
