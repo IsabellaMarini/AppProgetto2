@@ -28,6 +28,7 @@
                     android:layout_width="237dp"
                     android:layout_height="69dp"
                     android:layout_marginEnd="16dp"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
                 <Button
@@ -55,8 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
                 android:text="@string/descrizione"
-                android:textSize="20sp"
-                android:textColor="#007FFF"/>
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,24 +65,28 @@
 
                 <Switch
                     android:id="@+id/RicercaCalcio"
-                    android:layout_width="138dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="63dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:text="@string/calcio" />
+                    android:text="@string/calcio"
+                    android:textColor="@color/black" />
 
                 <Switch
                     android:id="@+id/RicercaTennis"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/tennis" />
+                    android:text="@string/tennis"
+                    android:textColor="@color/black" />
 
                 <Switch
                     android:id="@+id/BasketRicerca"
                     android:layout_width="wrap_content"
                     android:layout_height="63dp"
                     android:layout_weight="1"
-                    android:text="@string/basket" />
+                    android:text="@string/basket"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,24 +96,28 @@
 
                 <Switch
                     android:id="@+id/PallavoloRicerca"
-                    android:layout_width="wrap_content"
+                    android:layout_width="83dp"
                     android:layout_height="67dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:text="@string/pallavolo" />
+                    android:text="@string/pallavolo"
+                    android:textColor="@color/black" />
 
                 <Switch
                     android:id="@+id/Formula1Ricerca"
-                    android:layout_width="wrap_content"
+                    android:layout_width="110dp"
                     android:layout_height="67dp"
                     android:layout_weight="1"
-                    android:text="@string/formula_uno" />
+                    android:text="@string/formula_uno"
+                    android:textColor="@color/black" />
 
                 <Switch
                     android:id="@+id/NuotoRicerca"
                     android:layout_width="wrap_content"
                     android:layout_height="67dp"
                     android:layout_weight="1"
-                    android:text="@string/nuoto" />
+                    android:text="@string/nuoto"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 

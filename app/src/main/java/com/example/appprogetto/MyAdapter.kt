@@ -16,18 +16,16 @@ class MyAdapter(private val Notizie: ArrayList<Notizie>): RecyclerView.Adapter<M
      }
      override fun onBindViewHolder(holder:MyAdapter.MyViewHolder, position: Int) {
           val notizia : Notizie = Notizie[position]
-          holder.titolo.text = notizia.titolo
           holder.testo.text = notizia.testo
           holder.ambito.text = notizia.ambito
           holder.utente.text = notizia.utente
-          holder.cardView.setBackgroundResource(R.color.gray)
+          holder.cardView.setBackgroundResource(R.color.viola)
 
      }
      override fun getItemCount(): Int {
           return Notizie.size
      }
      class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-          val titolo: TextView = itemView.findViewById(R.id.titolo2)
           val testo : TextView = itemView.findViewById(R.id.articolo2)
           val ambito: TextView = itemView.findViewById(R.id.ambito2)
           val cardView: CardView = itemView.findViewById(R.id.cardView)
