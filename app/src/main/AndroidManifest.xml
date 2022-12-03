@@ -4,8 +4,7 @@
     package="com.example.appprogetto">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +15,13 @@
         android:theme="@style/Theme.AppProgetto"
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
+        <activity
+            android:name=".ProfiloUtente"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".paginaAccesso"
             android:exported="false" />
@@ -28,16 +34,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".paginaRegistrati"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".pagina_home"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".AggiungiNotizia"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>
