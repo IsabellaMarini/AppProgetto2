@@ -43,6 +43,9 @@
         <activity
             android:name=".AggiungiNotizia"
             android:exported="false" />
+        <activity
+            android:name=".Prova"
+            android:exported="false" />
     </application>
 
 </manifest>
