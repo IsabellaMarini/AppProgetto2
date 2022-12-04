@@ -6,6 +6,7 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -47,7 +48,8 @@ class pagina_home : AppCompatActivity() {
         recyclerView.adapter= myAdapter
         myAdapter.setOnClickListener(object : MyAdapter.OnClickListener{
             override fun onItemClicked(position: Int){
-                val intent = Intent(this@pagina_home,  ProfiloUtente::class.java)
+                val username = findViewById<TextView>(R.id.Proprietario).text.toString()
+                val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
                 startActivity(intent)
             }
         })}

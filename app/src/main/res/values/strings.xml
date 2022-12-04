@@ -31,4 +31,5 @@
     <string name="dati">Dati utente</string>
     <string name="indietro4">Indietro</string>
     <string name="messaggio">Messaggio</string>
+    <string name="crea">Creato da:</string>
 </resources>

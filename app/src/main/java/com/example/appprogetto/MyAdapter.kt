@@ -1,5 +1,6 @@
 package com.example.appprogetto
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,13 +20,13 @@ class MyAdapter(private val Notizie: ArrayList<Notizie>): RecyclerView.Adapter<M
           val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
           return MyViewHolder(itemView, clickListener)
      }
+     @SuppressLint("SetTextI18n")
      override fun onBindViewHolder(holder:MyAdapter.MyViewHolder, position: Int) {
           val notizia : Notizie = Notizie[position]
           holder.notizia.text = notizia.notizia
           holder.ambito.text = notizia.ambito
           holder.utente.text = notizia.utente
           holder.cardView.setBackgroundResource(R.color.viola)
-
      }
      override fun getItemCount(): Int {
           return Notizie.size
