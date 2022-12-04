@@ -1,16 +1,11 @@
 package com.example.appprogetto
 
-import android.R.layout.simple_expandable_list_item_2
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.CompoundButton
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +13,6 @@ import com.example.appprogetto.databinding.ActivityPaginaHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 
@@ -49,7 +43,14 @@ class pagina_home : AppCompatActivity() {
             Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
             binding.UserNome.text= document.get("nome") as CharSequence?
         }
-
+        fun datiUtente(){var myAdapter= MyAdapter(notizie)
+        recyclerView.adapter= myAdapter
+        myAdapter.setOnClickListener(object : MyAdapter.OnClickListener{
+            override fun onItemClicked(position: Int){
+                val intent = Intent(this@pagina_home,  ProfiloUtente::class.java)
+                startActivity(intent)
+            }
+        })}
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){
                   db.collection("Notizie").whereEqualTo("ambito", "Calcio").get().addOnSuccessListener { documents ->
@@ -58,6 +59,7 @@ class pagina_home : AppCompatActivity() {
                           notizie.add(document.toObject(Notizie::class.java))
                       }
                       myAdapter.notifyDataSetChanged()
+                      datiUtente()
                   }
                       .addOnFailureListener { exception ->
                           Log.w(TAG, "Error getting documents: ", exception)
@@ -85,6 +87,7 @@ class pagina_home : AppCompatActivity() {
                         notizie.add(document.toObject(Notizie::class.java))
                     }
                     myAdapter.notifyDataSetChanged()
+                    datiUtente()
                 }
                     .addOnFailureListener { exception ->
                         Log.w(TAG, "Error getting documents: ", exception)
@@ -111,6 +114,7 @@ class pagina_home : AppCompatActivity() {
                         notizie.add(document.toObject(Notizie::class.java))
                     }
                     myAdapter.notifyDataSetChanged()
+                    datiUtente()
                 }
                     .addOnFailureListener { exception ->
                         Log.w(TAG, "Error getting documents: ", exception)
@@ -136,6 +140,7 @@ class pagina_home : AppCompatActivity() {
                             notizie.add(document.toObject(Notizie::class.java))
                         }
                         myAdapter.notifyDataSetChanged()
+                        datiUtente()
                     }
                         .addOnFailureListener { exception ->
                             Log.w(TAG, "Error getting documents: ", exception)
@@ -162,6 +167,7 @@ class pagina_home : AppCompatActivity() {
                            notizie.add(document.toObject(Notizie::class.java))
                        }
                        myAdapter.notifyDataSetChanged()
+                       datiUtente()
                    }
                    .addOnFailureListener { exception ->
                        Log.w(TAG, "Error getting documents: ", exception)
@@ -183,13 +189,13 @@ class pagina_home : AppCompatActivity() {
        binding.Formula1Ricerca.setOnCheckedChangeListener { _, isChecked ->
 
             if(isChecked){
-
                 db.collection("Notizie").whereEqualTo("ambito", "Formula Uno").get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         Log.d(TAG, "${document.id} => ${document.data}")
                         notizie.add(document.toObject(Notizie::class.java))
                     }
                     myAdapter.notifyDataSetChanged()
+                    datiUtente()
                 }
                     .addOnFailureListener { exception ->
                         Log.w(TAG, "Error getting documents: ", exception)

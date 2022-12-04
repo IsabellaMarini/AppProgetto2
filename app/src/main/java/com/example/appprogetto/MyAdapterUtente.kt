@@ -22,7 +22,6 @@ class MyAdapterUtente(private val Utente: ArrayList<Users>): RecyclerView.Adapte
         holder.email.text = utente.email
         holder.cardView.setBackgroundResource(R.color.gray)
         holder.datanascita.text = utente.data_nascita
-
     }
     override fun getItemCount(): Int {
         return Utente.size
