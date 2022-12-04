@@ -28,7 +28,8 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/email"
@@ -41,7 +42,8 @@
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/Accedi2"
@@ -54,7 +56,8 @@
             android:layout_marginEnd="53dp"
             android:layout_marginBottom="256dp"
             android:backgroundTint="@color/verde"
-            android:text="@string/Accedi2" />
+            android:text="@string/Accedi2"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/indietro3"
@@ -67,7 +70,8 @@
             android:layout_marginBottom="254dp"
             android:layout_toEndOf="@+id/Accedi2"
             android:backgroundTint="@color/verde"
-            android:text="@string/indietro3" />
+            android:text="@string/indietro3"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

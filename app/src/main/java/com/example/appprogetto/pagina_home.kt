@@ -2,6 +2,7 @@ package com.example.appprogetto
 
 import android.R.layout.simple_expandable_list_item_2
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
@@ -43,7 +44,11 @@ class pagina_home : AppCompatActivity() {
         recyclerView.adapter = myAdapter
 
         user = FirebaseAuth.getInstance()
-        binding.UserNome.text= user.currentUser?.email
+        db.collection("Users").document(user.currentUser!!.email.toString()).get().addOnSuccessListener{
+                document->
+            Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
+            binding.UserNome.text= document.get("nome") as CharSequence?
+        }
 
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){

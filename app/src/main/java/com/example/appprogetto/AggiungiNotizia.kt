@@ -50,12 +50,11 @@ class AggiungiNotizia: AppCompatActivity() {
 
 
             val notizia =  hashMapOf(
-                "titolo" to binding.titolo.text.toString(),
                 "testo" to binding.articolo.text.toString(),
                 "ambito" to binding.ambito.text.toString(),
                 "utente" to auth.currentUser!!.email
             )
-            if (binding.titolo.text.isEmpty() || binding.articolo.text.isEmpty() || binding.ambito.text.isEmpty()) {
+            if ( binding.articolo.text.isEmpty() || binding.ambito.text.isEmpty()) {
                 Toast.makeText(this,
                     "Dati mancanti",
                     Toast.LENGTH_SHORT).show()}

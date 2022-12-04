@@ -106,21 +106,23 @@
 
                 <Button
                     android:id="@+id/indietro"
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/verde"
+                    android:insetLeft="20dp"
                     android:text="@string/indietro"
-                    android:textColor="@color/white"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textColor="@color/white" />
 
                 <Button
                     android:id="@+id/registrazione"
-                    android:layout_width="162dp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="225dp"
                     android:layout_height="48dp"
                     android:backgroundTint="@color/verde"
+                    android:insetLeft="100dp"
                     android:text="@string/conferma1"
-                    android:textColor="@color/white"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
