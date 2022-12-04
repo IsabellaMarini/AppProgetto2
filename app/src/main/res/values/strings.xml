@@ -28,7 +28,7 @@
     <string name="disconnetti">Disconnetti</string>
     <string name="descrizione">Per visualizzare le notizie è necessario selezionare uno o più sport</string>
     <string name="accedianonimo">Oppure accedi in anonimo</string>
-    <string name="dati">I tuoi dati</string>
+    <string name="dati">Dati utente</string>
     <string name="indietro4">Indietro</string>
     <string name="messaggio">Messaggio</string>
 </resources>

@@ -68,7 +68,6 @@ class paginaRegistrati : AppCompatActivity() {
                 "cognome" to  binding.Surname.text.toString(),
                 "username" to binding.Username.text.toString(),
                 "email" to binding.Email2.text.toString(),
-                "password" to binding.password2.text.toString(),
                 "data" to binding.dataNascita.text.toString(),
             )
 

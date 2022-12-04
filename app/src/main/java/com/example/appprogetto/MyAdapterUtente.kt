@@ -21,7 +21,7 @@ class MyAdapterUtente(private val Utente: ArrayList<Users>): RecyclerView.Adapte
         holder.username.text = utente.username
         holder.email.text = utente.email
         holder.cardView.setBackgroundResource(R.color.gray)
-        holder.datanascita.text = utente.data_nascita
+        holder.data.text = utente.data
     }
     override fun getItemCount(): Int {
         return Utente.size
@@ -32,6 +32,6 @@ class MyAdapterUtente(private val Utente: ArrayList<Users>): RecyclerView.Adapte
         val username: TextView = itemView.findViewById(R.id.username2)
         val cardView: CardView = itemView.findViewById(R.id.cardView)
         val email: TextView = itemView.findViewById(R.id.email3)
-        val datanascita: TextView = itemView.findViewById(R.id.data_nascita)
+        val data: TextView = itemView.findViewById(R.id.data_nascita)
     }
 }
