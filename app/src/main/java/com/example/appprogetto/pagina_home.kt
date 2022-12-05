@@ -24,7 +24,7 @@ class pagina_home : AppCompatActivity() {
     private lateinit var binding: ActivityPaginaHomeBinding
     private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
-
+    private lateinit var username2: String
     @SuppressLint("ResourceType", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +44,21 @@ class pagina_home : AppCompatActivity() {
             Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
             binding.UserNome.text= document.get("nome") as CharSequence?
         }
+        db.collection("Users").document(user.currentUser!!.email.toString()).get().addOnSuccessListener{
+                document->
+            Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
+            username2 = document.get("username").toString()
+        }
         fun datiUtente(){var myAdapter= MyAdapter(notizie)
         recyclerView.adapter= myAdapter
         myAdapter.setOnClickListener(object : MyAdapter.OnClickListener{
             override fun onItemClicked(position: Int){
                 val username = findViewById<TextView>(R.id.Proprietario).text.toString()
-                val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
-                startActivity(intent)
+                if (username2!=username){
+                    val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
+                 startActivity(intent)
             }
-        })}
+        }})}
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){
                   db.collection("Notizie").whereEqualTo("ambito", "Calcio").get().addOnSuccessListener { documents ->

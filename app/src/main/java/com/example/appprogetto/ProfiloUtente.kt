@@ -6,13 +6,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appprogetto.databinding.ActivityProfiloUtenteBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class ProfiloUtente : AppCompatActivity() {
@@ -24,7 +24,7 @@ class ProfiloUtente : AppCompatActivity() {
     private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
-    @SuppressLint("ResourceType", "NotifyDataSetChanged")
+    @SuppressLint("ResourceType", "NotifyDataSetChanged", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         db = Firebase.firestore
@@ -42,10 +42,14 @@ class ProfiloUtente : AppCompatActivity() {
             for(document in documents){
                 Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
                 users.add(document.toObject(Users::class.java))
-            }
+                }
             myAdapterUtente.notifyDataSetChanged()
         } .addOnFailureListener { exception ->
             Log.w(ContentValues.TAG, "Error getting documents: ", exception)
         }
-    }
-}
+        binding.indietro4.setOnClickListener {
+            val intent = Intent(this, pagina_home::class.java)
+            startActivity(intent)
+        }
+
+}}

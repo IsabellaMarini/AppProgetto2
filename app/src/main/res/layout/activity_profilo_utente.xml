@@ -34,16 +34,19 @@
 
             <Button
                 android:id="@+id/indietro4"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_500"
                 android:insetLeft="20dp"
                 android:text="@string/indietro4"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/messaggio"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,7 +54,8 @@
                 android:insetLeft="50dp"
                 android:insetRight="20dp"
                 android:text="@string/messaggio"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck" />
         </LinearLayout>
 
     </LinearLayout>
