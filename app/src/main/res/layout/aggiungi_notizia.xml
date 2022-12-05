@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/sfondo2"
+        android:background="@drawable/sfondo1"
         tools:layout_editor_absoluteX="60dp"
         tools:layout_editor_absoluteY="16dp">
 
@@ -101,7 +101,7 @@
                 android:id="@+id/conferma"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/verde"
+                android:backgroundTint="@color/purple_500"
                 android:insetLeft="100dp"
                 android:text="@string/conferma1" />
 

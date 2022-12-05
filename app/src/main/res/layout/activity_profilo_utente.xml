@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
             android:text="@string/dati"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -36,19 +37,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/verde"
+                android:backgroundTint="@color/purple_500"
                 android:insetLeft="20dp"
-                android:text="@string/indietro4" />
+                android:text="@string/indietro4"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/messaggio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="@color/verde"
+                android:backgroundTint="@color/purple_500"
                 android:insetLeft="50dp"
                 android:insetRight="20dp"
-                android:text="@string/messaggio" />
+                android:text="@string/messaggio"
+                android:textColor="@color/white" />
         </LinearLayout>
 
     </LinearLayout>

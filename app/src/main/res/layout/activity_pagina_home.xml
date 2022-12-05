@@ -25,7 +25,7 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="131dp"
+                    android:layout_width="0dp"
                     android:layout_height="56dp"
                     android:layout_weight="1"
                     android:text="@string/benvenuto"
@@ -44,7 +44,7 @@
                     android:id="@+id/disconnetti"
                     android:layout_width="151dp"
                     android:layout_height="match_parent"
-                    android:backgroundTint="@color/verde"
+                    android:backgroundTint="@color/purple_500"
                     android:text="@string/disconnetti"
                     android:textColor="@color/white"
                     tools:ignore="TextContrastCheck" />
@@ -55,7 +55,7 @@
                 android:id="@+id/aggiungi"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
-                android:backgroundTint="@color/verde"
+                android:backgroundTint="@color/purple_500"
                 android:text="@string/aggiungi_una_notizia"
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
@@ -65,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
                 android:text="@string/descrizione"
+                android:textColor="@color/gray"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -76,10 +77,12 @@
                     android:id="@+id/RicercaCalcio"
                     android:layout_width="wrap_content"
                     android:layout_height="63dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="@string/calcio"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500" android:state_checked="true"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <Switch
                     android:id="@+id/RicercaTennis"
@@ -87,7 +90,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="@string/tennis"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <Switch
                     android:id="@+id/BasketRicerca"
@@ -95,7 +100,9 @@
                     android:layout_height="63dp"
                     android:layout_weight="1"
                     android:text="@string/basket"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
             </LinearLayout>
 
             <LinearLayout
@@ -107,10 +114,12 @@
                     android:id="@+id/PallavoloRicerca"
                     android:layout_width="83dp"
                     android:layout_height="67dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:text="@string/pallavolo"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <Switch
                     android:id="@+id/Formula1Ricerca"
@@ -118,7 +127,9 @@
                     android:layout_height="67dp"
                     android:layout_weight="1"
                     android:text="@string/formula_uno"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 <Switch
                     android:id="@+id/NuotoRicerca"
@@ -126,7 +137,9 @@
                     android:layout_height="67dp"
                     android:layout_weight="1"
                     android:text="@string/nuoto"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:color="@color/purple_500"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             </LinearLayout>
 

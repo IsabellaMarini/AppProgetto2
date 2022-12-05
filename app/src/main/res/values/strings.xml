@@ -32,4 +32,9 @@
     <string name="indietro4">Indietro</string>
     <string name="messaggio">Messaggio</string>
     <string name="crea">Creato da:</string>
+    <string name="nome2">Nome:</string>
+    <string name="cognome2">"Cognome: "</string>
+    <string name="username2">Username:</string>
+    <string name="email3">Email:</string>
+    <string name="dataNascita">Data di nascita:</string>
 </resources>

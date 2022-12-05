@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sfondo2">
+    android:background="@drawable/sfondo1">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -109,7 +109,7 @@
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/verde"
+                    android:backgroundTint="@color/purple_500"
                     android:insetLeft="20dp"
                     android:text="@string/indietro"
                     android:textColor="@color/white" />
@@ -119,7 +119,7 @@
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="225dp"
                     android:layout_height="48dp"
-                    android:backgroundTint="@color/verde"
+                    android:backgroundTint="@color/purple_500"
                     android:insetLeft="100dp"
                     android:text="@string/conferma1"
                     android:textColor="@color/white" />

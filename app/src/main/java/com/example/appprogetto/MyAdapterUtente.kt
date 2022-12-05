@@ -19,7 +19,7 @@ class MyAdapterUtente(private val Users: ArrayList<Users>): RecyclerView.Adapter
         holder.cognome.text = utente.cognome
         holder.username.text = utente.username
         holder.email.text = utente.email
-        holder.cardView.setBackgroundResource(R.color.gray)
+        holder.cardView.setBackgroundResource(R.color.viola)
         holder.data.text = utente.data
     }
     override fun getItemCount(): Int {
