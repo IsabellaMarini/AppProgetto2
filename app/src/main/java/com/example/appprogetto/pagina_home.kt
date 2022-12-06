@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.iterator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appprogetto.databinding.ActivityPaginaHomeBinding
@@ -53,11 +54,13 @@ class pagina_home : AppCompatActivity() {
         recyclerView.adapter= myAdapter
         myAdapter.setOnClickListener(object : MyAdapter.OnClickListener{
             override fun onItemClicked(position: Int){
-                val username = findViewById<TextView>(R.id.Proprietario).text.toString()
-                if (username2!=username){
+                var Utenti = findViewById<RecyclerView>(R.id.notizie)
+                for (utente in Utenti){
+                   var username= utente.findViewById<TextView>(R.id.Proprietario).text.toString()
+                    if (username2!=username){
                     val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
-                 startActivity(intent)
-            }
+                    startActivity(intent)
+            }}
         }})}
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){
