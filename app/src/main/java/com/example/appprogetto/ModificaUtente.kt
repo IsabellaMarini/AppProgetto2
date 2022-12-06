@@ -40,7 +40,7 @@ class ModificaUtente : AppCompatActivity() {
         myAdapterUtente2= MyAdapterUtente(users2)
         recyclerView.adapter = myAdapterUtente2
         user = FirebaseAuth.getInstance()
-        db.collection("Users").whereEqualTo("username", intent.getStringExtra("username5")).get().addOnSuccessListener {
+        db.collection("Users").whereEqualTo("nome", intent.getStringExtra("username5")).get().addOnSuccessListener {
                 documents->
             for(document in documents){
                 Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
