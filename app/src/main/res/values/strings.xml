@@ -37,4 +37,6 @@
     <string name="username2">Username:</string>
     <string name="email3">Email:</string>
     <string name="dataNascita">Data di nascita:</string>
+    <string name="modifica">Modifica</string>
+
 </resources>

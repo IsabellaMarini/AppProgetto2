@@ -60,7 +60,8 @@ class pagina_home : AppCompatActivity() {
                     if (username2!=username){
                     val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
                     startActivity(intent)
-            }}
+            }
+            }
         }})}
          binding.RicercaCalcio.setOnCheckedChangeListener { _, isChecked ->
               if(isChecked){
@@ -232,6 +233,13 @@ class pagina_home : AppCompatActivity() {
             binding.aggiungi.setOnClickListener{
                 startActivity(
                     Intent(this, AggiungiNotizia::class.java)) }
+
+            binding.UserNome.setOnClickListener {
+                var username= findViewById<TextView>(R.id.UserNome).text.toString()
+                startActivity(
+                    Intent(this, ModificaUtente::class.java ).putExtra("username5", username)
+                )
+            }
 
 
         }
