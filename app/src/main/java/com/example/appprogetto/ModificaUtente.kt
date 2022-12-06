@@ -18,7 +18,7 @@ import com.google.firebase.ktx.Firebase
 class ModificaUtente : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var myAdapterUtente2: MyAdapterUtente
+    private lateinit var myAdapterUtente2: MyAdapterModifica
     private lateinit var users2: ArrayList<Users>
     private lateinit var binding: ActivityModificaUtenteBinding
     private lateinit var user: FirebaseAuth
@@ -37,10 +37,10 @@ class ModificaUtente : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         users2= arrayListOf()
-        myAdapterUtente2= MyAdapterUtente(users2)
+        myAdapterUtente2= MyAdapterModifica(users2)
         recyclerView.adapter = myAdapterUtente2
         user = FirebaseAuth.getInstance()
-        db.collection("Users").whereEqualTo("nome", intent.getStringExtra("username5")).get().addOnSuccessListener {
+        db.collection("Users").whereEqualTo("nome", intent.getStringExtra("nome")).get().addOnSuccessListener {
                 documents->
             for(document in documents){
                 Log.d(ContentValues.TAG, "${document.id} => ${document.data}")

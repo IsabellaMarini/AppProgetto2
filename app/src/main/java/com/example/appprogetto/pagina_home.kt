@@ -235,9 +235,9 @@ class pagina_home : AppCompatActivity() {
                     Intent(this, AggiungiNotizia::class.java)) }
 
             binding.UserNome.setOnClickListener {
-                var username= findViewById<TextView>(R.id.UserNome).text.toString()
+                var nome= findViewById<TextView>(R.id.UserNome).text.toString()
                 startActivity(
-                    Intent(this, ModificaUtente::class.java ).putExtra("username5", username)
+                    Intent(this, ModificaUtente::class.java ).putExtra("nome", nome)
                 )
             }
 

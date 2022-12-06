@@ -1,7 +1,7 @@
 package com.example.appprogetto
 
 
-data class Users( val nome: String?=null, val cognome: String?=null, val username: String?=null,
-                  val email: String?=null, val data: String?=null,
+data class Users( var nome: String?=null, var cognome: String?=null, var username: String?=null,
+                  var email: String?=null, var data: String?=null,
                 )
 
