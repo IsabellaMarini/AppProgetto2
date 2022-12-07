@@ -6,10 +6,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appprogetto.databinding.ActivityModificaUtenteBinding
-import com.example.appprogetto.databinding.ActivityProfiloUtenteBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -23,6 +23,7 @@ class ModificaUtente : AppCompatActivity() {
     private lateinit var binding: ActivityModificaUtenteBinding
     private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
+
 
     @SuppressLint("ResourceType", "NotifyDataSetChanged", "SetTextI18n")
 
@@ -56,6 +57,26 @@ class ModificaUtente : AppCompatActivity() {
         }
 
 
+        binding.modificaprofilo.setOnClickListener {
+
+            var utente = hashMapOf(
+                "nome" to findViewById<EditText>(R.id.nome4).text.toString(),
+                "cognome" to findViewById<EditText>(R.id.cognome4).text.toString(),
+                "username" to findViewById<EditText>(R.id.username4).text.toString(),
+                "email" to findViewById<EditText>(R.id.email4).text.toString(),
+                "data" to findViewById<EditText>(R.id.data4).text.toString(),
+            )
+            db.collection("Users").document(user.currentUser!!.email.toString()).set(utente)
+            db.collection("Notizie").whereEqualTo("utente", intent.getStringExtra("username")).get().addOnSuccessListener {
+                documents->
+                for (document in documents) {
+                    document.getDocumentReference("utente")
+                        ?.set("utente" to findViewById<EditText>(R.id.username4).text.toString())
+                }
+            }
+            val intent = Intent(this, pagina_home::class.java)
+            startActivity(intent)
+        }
 
 
 
