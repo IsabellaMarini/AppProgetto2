@@ -53,13 +53,13 @@
             <EditText
                 android:id="@+id/cognome4"
                 android:layout_width="61dp"
-                android:layout_height="42dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:autofillHints=""
                 tools:ignore="LabelFor" />
         </LinearLayout>
 
@@ -80,40 +80,13 @@
             <EditText
                 android:id="@+id/username4"
                 android:layout_width="209dp"
-                android:layout_height="42dp"
+                android:layout_height="61dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:autofillHints=""
-                tools:ignore="LabelFor" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="193dp"
-                android:layout_height="42dp"
-                android:layout_weight="1"
-                android:text="@string/email3"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/email4"
-                android:layout_width="210dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:autofillHints=""
                 tools:ignore="LabelFor" />
         </LinearLayout>
 
@@ -134,13 +107,13 @@
             <EditText
                 android:id="@+id/data4"
                 android:layout_width="152dp"
-                android:layout_height="42dp"
+                android:layout_height="59dp"
                 android:layout_weight="1"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:autofillHints=""
                 tools:ignore="LabelFor" />
         </LinearLayout>
     </LinearLayout>

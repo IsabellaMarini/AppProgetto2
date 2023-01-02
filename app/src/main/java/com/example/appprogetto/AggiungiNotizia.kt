@@ -18,7 +18,7 @@ class AggiungiNotizia: AppCompatActivity() {
     lateinit var binding: AggiungiNotiziaBinding
     lateinit var auth: FirebaseAuth
     lateinit var database : FirebaseFirestore
-    lateinit var username:String
+    lateinit var email:String
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -48,14 +48,14 @@ class AggiungiNotizia: AppCompatActivity() {
         }
         database.collection("Users").document(auth.currentUser!!.email.toString()).get().addOnSuccessListener{ document->
             Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
-            username= (document.get("username")).toString()
+            email= (document.get("email")).toString()
         }
         binding.conferma.setOnClickListener() {
 
             val notizia =  hashMapOf(
                 "notizia" to  binding.articolo.text.toString(),
                 "ambito" to binding.ambito.text.toString(),
-                "utente" to username
+                "utente" to email
             )
             if (binding.articolo.text.isEmpty() || binding.ambito.text.isEmpty()) {
                 Toast.makeText(this,

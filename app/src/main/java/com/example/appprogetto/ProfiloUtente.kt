@@ -37,7 +37,7 @@ class ProfiloUtente : AppCompatActivity() {
         myAdapterUtente= MyAdapterUtente(users)
         recyclerView.adapter = myAdapterUtente
         user = FirebaseAuth.getInstance()
-        db.collection("Users").whereEqualTo("username", intent.getStringExtra("username")).get().addOnSuccessListener {
+        db.collection("Users").whereEqualTo("email", intent.getStringExtra("email")).get().addOnSuccessListener {
             documents->
             for(document in documents){
                 Log.d(ContentValues.TAG, "${document.id} => ${document.data}")

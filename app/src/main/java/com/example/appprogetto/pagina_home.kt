@@ -45,20 +45,16 @@ class pagina_home : AppCompatActivity() {
             Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
             binding.UserNome.text= document.get("nome") as CharSequence?
         }
-        db.collection("Users").document(user.currentUser!!.email.toString()).get().addOnSuccessListener{
-                document->
-            Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
-            username2 = document.get("username").toString()
-        }
+
         fun datiUtente(){var myAdapter= MyAdapter(notizie)
         recyclerView.adapter= myAdapter
         myAdapter.setOnClickListener(object : MyAdapter.OnClickListener{
             override fun onItemClicked(position: Int){
                 var Utenti = findViewById<RecyclerView>(R.id.notizie)
                 for (utente in Utenti){
-                   var username= utente.findViewById<TextView>(R.id.Proprietario).text.toString()
-                    if (username2!=username){
-                    val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("username", username)
+                   var email= utente.findViewById<TextView>(R.id.Proprietario).text.toString()
+                    if (user.currentUser!!.email.toString()!=email){
+                    val intent = Intent(this@pagina_home,  ProfiloUtente::class.java).putExtra("email", email)
                     startActivity(intent)
             }
             }

@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/Proprietario"
-                android:layout_width="213dp"
+                android:layout_width="289dp"
                 android:layout_height="54dp"
                 android:clickable="true"
                 android:focusable="true"

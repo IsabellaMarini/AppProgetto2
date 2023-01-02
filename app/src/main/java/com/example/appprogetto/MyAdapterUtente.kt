@@ -1,11 +1,15 @@
 package com.example.appprogetto
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+
 
 
 class MyAdapterUtente(private val Users: ArrayList<Users>): RecyclerView.Adapter<MyAdapterUtente.MyViewHolder>() {
@@ -22,6 +26,8 @@ class MyAdapterUtente(private val Users: ArrayList<Users>): RecyclerView.Adapter
         holder.cardView.setBackgroundResource(R.color.viola)
         holder.data.text = utente.data
     }
+
+
     override fun getItemCount(): Int {
         return Users.size
     }

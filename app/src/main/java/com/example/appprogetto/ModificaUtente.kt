@@ -2,6 +2,7 @@ package com.example.appprogetto
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,8 +25,7 @@ class ModificaUtente : AppCompatActivity() {
     private lateinit var user: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
-
-    @SuppressLint("ResourceType", "NotifyDataSetChanged", "SetTextI18n")
+    @SuppressLint("ResourceType", "NotifyDataSetChanged", "SetTextI18n", "CutPasteId")
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +41,7 @@ class ModificaUtente : AppCompatActivity() {
         myAdapterUtente2= MyAdapterModifica(users2)
         recyclerView.adapter = myAdapterUtente2
         user = FirebaseAuth.getInstance()
+
         db.collection("Users").whereEqualTo("nome", intent.getStringExtra("nome")).get().addOnSuccessListener {
                 documents->
             for(document in documents){
@@ -63,23 +64,13 @@ class ModificaUtente : AppCompatActivity() {
                 "nome" to findViewById<EditText>(R.id.nome4).text.toString(),
                 "cognome" to findViewById<EditText>(R.id.cognome4).text.toString(),
                 "username" to findViewById<EditText>(R.id.username4).text.toString(),
-                "email" to findViewById<EditText>(R.id.email4).text.toString(),
                 "data" to findViewById<EditText>(R.id.data4).text.toString(),
             )
+
             db.collection("Users").document(user.currentUser!!.email.toString()).set(utente)
-            db.collection("Notizie").whereEqualTo("utente", intent.getStringExtra("username")).get().addOnSuccessListener {
-                documents->
-                for (document in documents) {
-                    document.getDocumentReference("utente")
-                        ?.set("utente" to findViewById<EditText>(R.id.username4).text.toString())
-                }
-            }
+
             val intent = Intent(this, pagina_home::class.java)
-            startActivity(intent)
-        }
+            startActivity(intent)}
+    }}
 
 
-
-
-    }
-}
