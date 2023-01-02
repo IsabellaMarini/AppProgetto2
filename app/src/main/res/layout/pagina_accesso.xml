@@ -9,8 +9,10 @@
         android:layout_width="413dp"
         android:layout_height="745dp"
         android:background="@drawable/sfondo1"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="2dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/Password"
