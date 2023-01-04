@@ -42,5 +42,7 @@
     <string name="mandato">Questo è un messaggio inviato</string>
     <string name="ricevuto">Questo è un messaggio ricevuto</string>
     <string name="messaggi">Messaggi</string>
+    <string name="scrivi_messaggio">Scrivi messaggio</string>
+    <string name="invia">Invia</string>
 
 </resources>

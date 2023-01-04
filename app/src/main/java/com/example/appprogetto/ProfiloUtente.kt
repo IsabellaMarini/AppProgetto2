@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.core.view.iterator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appprogetto.databinding.ActivityProfiloUtenteBinding
@@ -37,6 +38,7 @@ class ProfiloUtente : AppCompatActivity() {
         myAdapterUtente= MyAdapterUtente(users)
         recyclerView.adapter = myAdapterUtente
         user = FirebaseAuth.getInstance()
+
         db.collection("Users").whereEqualTo("email", intent.getStringExtra("email")).get().addOnSuccessListener {
             documents->
             for(document in documents){
@@ -50,6 +52,16 @@ class ProfiloUtente : AppCompatActivity() {
         binding.indietro4.setOnClickListener {
             val intent = Intent(this, pagina_home::class.java)
             startActivity(intent)
+        }
+
+        binding.messaggio.setOnClickListener{
+            var Utenti = findViewById<RecyclerView>(R.id.Utente2)
+            for (utente in Utenti){
+                var email= utente.findViewById<TextView>(R.id.email3).text.toString()
+                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email)
+                startActivity(intent)
+            }
+
         }
 
 }}
