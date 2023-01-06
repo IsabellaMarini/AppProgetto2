@@ -35,7 +35,7 @@ class ProfiloUtente : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         users= arrayListOf()
-        myAdapterUtente= MyAdapterUtente(users)
+        myAdapterUtente= MyAdapterUtente( users)
         recyclerView.adapter = myAdapterUtente
         user = FirebaseAuth.getInstance()
 
@@ -57,8 +57,9 @@ class ProfiloUtente : AppCompatActivity() {
         binding.messaggio.setOnClickListener{
             var Utenti = findViewById<RecyclerView>(R.id.Utente2)
             for (utente in Utenti){
+                var nome= utente.findViewById<TextView>(R.id.nome3).text.toString()
                 var email= utente.findViewById<TextView>(R.id.email3).text.toString()
-                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email)
+                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email).putExtra("nome", nome)
                 startActivity(intent)
             }
 

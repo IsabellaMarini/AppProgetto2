@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 
 
-class MyAdapterUtente(val context: Context, private val Users: ArrayList<Users>): RecyclerView.Adapter<MyAdapterUtente.MyViewHolder>() {
+class MyAdapterUtente( private val Users: ArrayList<Users>): RecyclerView.Adapter<MyAdapterUtente.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewTipe: Int): MyAdapterUtente.MyViewHolder{
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.itemutente, parent, false)
         return MyViewHolder(itemView)
@@ -25,15 +25,6 @@ class MyAdapterUtente(val context: Context, private val Users: ArrayList<Users>)
         holder.email.text = utente.email
         holder.cardView.setBackgroundResource(R.color.viola)
         holder.data.text = utente.data
-
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, ChatActivity::class.java)
-
-            intent.putExtra("name", utente.nome)
-            intent.putExtra("email", utente.email)
-            context.startActivity(intent)
-        }
-
     }
 
 

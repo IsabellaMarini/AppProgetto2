@@ -44,5 +44,6 @@
     <string name="messaggi">Messaggi</string>
     <string name="scrivi_messaggio">Scrivi messaggio</string>
     <string name="invia">Invia</string>
+    <string name="todo">TODO</string>
 
 </resources>
