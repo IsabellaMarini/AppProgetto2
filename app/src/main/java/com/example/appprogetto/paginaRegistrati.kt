@@ -42,7 +42,7 @@ class paginaRegistrati : AppCompatActivity() {
         var email = binding.Email2.text.toString()!!
         var password = binding.password2.text.toString()!!
         var conferma = binding.password3.text.toString()
-
+        val currentTimestamp = System.currentTimeMillis()
         var indietro = findViewById<Button>(R.id.indietro)
         indietro.setOnClickListener() {
             val intent = Intent(this, MainActivity::class.java)
@@ -55,7 +55,7 @@ class paginaRegistrati : AppCompatActivity() {
         seleziona.setDate(calendar.getTimeInMillis(), false, false)
         val data_nascita = findViewById<TextView>(R.id.dataNascita)
         seleziona.setFirstDayOfWeek(2)
-
+        seleziona.maxDate= currentTimestamp
         seleziona.setOnDateChangeListener { calendarView, year, month, day ->
             data_nascita.text =
                 (day.toString() + "/" + ((month) + (1)).toString() + "/" + year.toString())

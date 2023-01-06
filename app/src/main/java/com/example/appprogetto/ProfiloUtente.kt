@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import org.checkerframework.checker.units.qual.A
 
 class ProfiloUtente : AppCompatActivity() {
 
@@ -57,9 +58,8 @@ class ProfiloUtente : AppCompatActivity() {
         binding.messaggio.setOnClickListener{
             var Utenti = findViewById<RecyclerView>(R.id.Utente2)
             for (utente in Utenti){
-                var nome= utente.findViewById<TextView>(R.id.nome3).text.toString()
                 var email= utente.findViewById<TextView>(R.id.email3).text.toString()
-                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email).putExtra("nome", nome)
+                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email)
                 startActivity(intent)
             }
 

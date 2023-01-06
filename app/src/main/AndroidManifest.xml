@@ -57,7 +57,9 @@
         <activity
             android:name=".AggiungiNotizia"
             android:exported="false" />
-
+        <activity
+            android:name=".Chat"
+            android:exported="false" />
     </application>
 
 </manifest>

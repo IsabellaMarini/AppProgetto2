@@ -35,7 +35,6 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
-        val name = intent.getStringExtra("name")
         val receiver = intent.getStringExtra("email2")
         user = FirebaseAuth.getInstance()
         val sender = user.currentUser?.email
@@ -43,9 +42,6 @@ class ChatActivity : AppCompatActivity() {
 
         senderRoom = receiver + sender
         receiverRoom = sender+ receiver
-
-        supportActionBar?.title = name
-
 
         chatRecyclerView = findViewById(R.id.chatReciclerView)
         messageBox = findViewById(R.id.messageBox)
