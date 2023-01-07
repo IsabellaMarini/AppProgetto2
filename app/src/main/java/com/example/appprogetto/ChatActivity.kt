@@ -26,7 +26,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var messagelist: ArrayList<Message>
     private lateinit var db: FirebaseFirestore
     private lateinit var user: FirebaseAuth
-
+    lateinit var chat: ArrayList<String>
     var receiverRoom: String? = null
     var senderRoom: String? = null
 
@@ -51,36 +51,56 @@ class ChatActivity : AppCompatActivity() {
 
         chatRecyclerView.layoutManager = LinearLayoutManager(this)
         chatRecyclerView.adapter = messageAdapter
-
+        val currentTimestamp = System.currentTimeMillis()
+        chat= ArrayList()
+        chat.add( receiver.toString())
+        chat.add(sender.toString())
         sendButton.setOnClickListener(){
+           var chat= hashMapOf("mittente" to  sender,
+               "destinatario" to receiver)
             var messaggio =  hashMapOf(
                 "messaggio" to messageBox.text.toString(),
-                "mittente" to  sender,
-                "destinatario" to receiver)
+                "time" to currentTimestamp
+               )
 
-            var db = db.collection("Messaggi")
-            db.add(messaggio as HashMap<String, Any>).addOnSuccessListener{ documentReference->
+            var db = db.collection("Chat")
+            db.add(chat as HashMap<String, Any>).addOnSuccessListener{ documentReference->
                 Log.d(ContentValues.TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
                 Toast.makeText(this,
                     "Dati salvati correttamente",
                     Toast.LENGTH_SHORT).show()
+                documentReference.collection("Messaggi").add(messaggio as HashMap<String, Any>).addOnSuccessListener{ documentReference->
+                    Log.d(ContentValues.TAG, "I dati sono stati salvati correttamente: ${documentReference.id}")
+                    Toast.makeText(this,
+                        "Dati salvati correttamente",
+                        Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener { e ->
+                    Log.w(ContentValues.TAG, "Errore", e)
+                    Toast.makeText(this,
+                        "Errore",
+                        Toast.LENGTH_SHORT).show()
+                }
+
             }.addOnFailureListener { e ->
                 Log.w(ContentValues.TAG, "Errore", e)
                 Toast.makeText(this,
                     "Errore",
                     Toast.LENGTH_SHORT).show()
             }
+
         }
-        db.collection("Messaggi").get()
+        db.collection("Chat").whereIn( "mittente", chat)
+            .get()
             .addOnSuccessListener { documents->
                 for(document in documents){
+
+                            messagelist.add(document.toObject(Message::class.java))
+
                     Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
-                    messagelist.add(document.toObject(Message::class.java))
                 }
 
        messageAdapter.notifyDataSetChanged()
-    }.addOnFailureListener { exception ->
-        Log.w(ContentValues.TAG, "Error getting documents: ", exception)
+
     }
-    }
-}
+    }}
+

@@ -26,3 +26,5 @@ class ChatAdapter(private val Message: ArrayList<Message>): RecyclerView.Adapter
     }
 
 }
+
+

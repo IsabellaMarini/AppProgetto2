@@ -24,7 +24,7 @@ class Chat : AppCompatActivity() {
     private lateinit var messagelist: ArrayList<Message>
     private lateinit var db: FirebaseFirestore
     private lateinit var user: FirebaseAuth
-
+    private lateinit var destinatario: ArrayList<String>
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,12 +39,14 @@ class Chat : AppCompatActivity() {
         chatAdapter= ChatAdapter( messagelist)
         chatRecyclerView.adapter = chatAdapter
         intent.getStringExtra("username")
-        db.collection("Messaggi").whereEqualTo("destinatario", user.currentUser?.email.toString()).get()
+        db.collection("Messaggi").whereEqualTo("destinatario", user.currentUser?.email.toString())
+            .get()
             .addOnSuccessListener {  documents->
                 for(document in documents){
                     Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
                  messagelist.add(document.toObject(Message::class.java))
                 }
+
                 chatAdapter.notifyDataSetChanged()
             } .addOnFailureListener { exception ->
                 Log.w(ContentValues.TAG, "Error getting documents: ", exception)
