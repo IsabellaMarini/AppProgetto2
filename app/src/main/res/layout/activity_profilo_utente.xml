@@ -27,15 +27,16 @@
             android:layout_height="match_parent" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="171dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="50dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/indietro4"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_500"
@@ -44,18 +45,6 @@
                 android:textColor="@color/white"
                 tools:ignore="TextContrastCheck" />
 
-            <Button
-                android:id="@+id/messaggio"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_500"
-                android:insetLeft="50dp"
-                android:insetRight="20dp"
-                android:text="@string/messaggio"
-                android:textColor="@color/white"
-                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,TextContrastCheck" />
         </LinearLayout>
 
     </LinearLayout>

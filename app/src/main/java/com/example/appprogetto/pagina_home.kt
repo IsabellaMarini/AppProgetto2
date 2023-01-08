@@ -236,11 +236,7 @@ class pagina_home : AppCompatActivity() {
                     Intent(this, ModificaUtente::class.java ).putExtra("nome", nome)
                 )
             }
-            binding.chat.setOnClickListener{
-                startActivity(
-                    Intent(this, Chat::class.java )
-                )
-            }
+
 
         }
 }

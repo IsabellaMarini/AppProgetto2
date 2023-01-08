@@ -61,24 +61,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/chat"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
-                    android:text="@string/messaggi"
-                    android:textColor="@color/white"
-                    style="?android:attr/buttonBarButtonStyle" />
-
-                <Button
                     android:id="@+id/aggiungi"
-                    android:layout_width="221dp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="61dp"
                     android:backgroundTint="@color/purple_500"
                     android:text="@string/aggiungi_una_notizia"
                     android:textColor="@color/white"
-                    tools:ignore="TextContrastCheck"
-                    style="?android:attr/buttonBarButtonStyle" />
+                    tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
             <TextView

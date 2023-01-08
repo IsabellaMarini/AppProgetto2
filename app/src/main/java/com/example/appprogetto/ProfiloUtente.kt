@@ -55,14 +55,7 @@ class ProfiloUtente : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.messaggio.setOnClickListener{
-            var Utenti = findViewById<RecyclerView>(R.id.Utente2)
-            for (utente in Utenti){
-                var email= utente.findViewById<TextView>(R.id.email3).text.toString()
-                val intent = Intent(this, ChatActivity::class.java).putExtra("email2", email)
-                startActivity(intent)
-            }
 
         }
 
-}}
+}
